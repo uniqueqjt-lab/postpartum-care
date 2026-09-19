@@ -1,0 +1,96 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>恶露与产后出血｜产后家庭照护助手</title><style>
+:root{
+  --bg:#f6f7f3; --card:#fff; --text:#20251f; --muted:#687168; --line:#e1e5df;
+  --soft:#f1f4ef; --family:#f7f1e8; --family-line:#e4d7c4; --danger:#fff1ef;
+  --danger-line:#e7b0a8; --warn:#fff8e7; --warn-line:#e7d29d; --ok:#edf7ef;
+  --ok-line:#b8d5bc; --accent:#365c43; --accent-soft:#e8f0ea; --shadow:0 10px 32px rgba(26,36,29,.06);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.72}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:30;background:rgba(246,247,243,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1120px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand-wrap{text-decoration:none}.brand{font-size:18px;font-weight:800}.subtitle{font-size:12px;color:var(--muted)}
+.top-actions{display:flex;gap:8px;align-items:center}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 12px;font-size:13px;text-decoration:none}.pill.danger{background:var(--danger);border-color:#f0d0cb}
+.wrap{max-width:1120px;margin:24px auto 70px;padding:0 16px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:28px;display:grid;grid-template-columns:1.35fr .85fr;gap:28px;align-items:center}.eyebrow{font-size:13px;font-weight:800;color:#607063;letter-spacing:.05em}.hero h1{font-size:34px;line-height:1.22;margin:6px 0 10px}.hero p{margin:0;color:var(--muted)}
+.date-box{background:var(--soft);padding:18px;border-radius:16px}.date-box label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}.date-box input,.date-box button,.search-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:white}.date-box button{margin-top:9px;cursor:pointer;font-weight:800}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.quick{padding:20px;text-decoration:none;transition:.15s}.quick:hover{transform:translateY(-2px);border-color:#c7d0c7}.quick .icon{font-size:24px}.quick h2{font-size:19px;margin:8px 0 5px}.quick p{margin:0;color:var(--muted);font-size:14px}.quick.family{background:var(--family);border-color:var(--family-line)}.quick.danger{background:var(--danger);border-color:#f1d0ca}
+.section{padding:26px;margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}.section h2{font-size:24px;line-height:1.3;margin:4px 0 0}.tag{font-size:12px;background:var(--soft);padding:6px 10px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.columns{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.columns.three{grid-template-columns:repeat(3,1fr)}.panel{background:var(--soft);padding:17px;border-radius:15px}.panel h3{margin:0 0 7px;font-size:16px}.panel p{margin:0;color:#4f584f}
+.prototype-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.prototype-link{padding:20px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#fff}.prototype-link:hover{border-color:#aebcaf}.prototype-link .kicker{font-size:12px;font-weight:800;color:var(--muted)}.prototype-link h3{margin:5px 0 6px;font-size:18px}.prototype-link p{margin:0;color:var(--muted);font-size:14px}
+.page-hero{padding:25px 27px;margin-bottom:18px}.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:8px}.breadcrumb a{color:var(--muted)}.page-hero h1{font-size:30px;line-height:1.25;margin:3px 0 10px}.page-hero p{margin:0;color:var(--muted)}
+.mode-tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.mode-tab{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 13px;font-weight:750;cursor:pointer}.mode-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}.mode-content.hidden{display:none}
+.timeline{display:grid;gap:12px}.task{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.task h3{font-size:17px;margin:0 0 7px}.task p{margin:0;color:#4e574e}.task ul{margin:8px 0 0;padding-left:20px}.task li{margin:5px 0}.task.family{background:var(--family);border-color:var(--family-line)}
+.callout{border-radius:16px;padding:18px;border:1px solid var(--line);margin-top:13px}.callout strong{display:block;margin-bottom:5px}.callout p{margin:0}.callout.ok{background:var(--ok);border-color:var(--ok-line)}.callout.warn{background:var(--warn);border-color:var(--warn-line)}.callout.danger{background:var(--danger);border-color:var(--danger-line)}.callout.family{background:var(--family);border-color:var(--family-line)}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.check input{margin-top:5px;transform:scale(1.12)}.check span{font-size:14px}
+.family-block{background:var(--family);border:1px solid var(--family-line);border-radius:18px;padding:20px;margin-top:12px}.family-block h3{font-size:18px;margin:0 0 8px}.family-block p{margin:0 0 10px}.family-block p:last-child{margin-bottom:0}.family-block ul{margin:8px 0 0;padding-left:20px}
+.myth{border-left:4px solid #cfaa70;padding:15px 16px;background:#fbf7f0;border-radius:0 14px 14px 0;margin-top:14px}.myth h3{margin:0 0 7px;font-size:17px}.myth p{margin:0 0 8px}.myth p:last-child{margin-bottom:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}.branch{border:1px solid var(--line);border-radius:16px;padding:18px}.branch h3{margin:0 0 8px;font-size:17px}.branch p{margin:0 0 9px}.branch ul{margin:0;padding-left:20px}
+.priority{display:grid;gap:10px}.priority-item{border:1px solid var(--line);border-radius:15px;padding:15px}.priority-item b{display:block;margin-bottom:4px}.priority-item p{margin:0;color:#4f584f}
+.source-box{background:#fafbf8;border:1px dashed #cbd3c8;border-radius:15px;padding:17px}.source-box h3{font-size:15px;margin:0 0 7px}.source-box p,.source-box li{color:var(--muted);font-size:13px}.source-box p{margin:0}.source-box ul{margin:8px 0 0;padding-left:20px}.source-box a{color:#315f42}
+details{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}summary{cursor:pointer;font-weight:800;color:#425247}
+.note{font-size:13px;color:var(--muted)}.mini-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.mini-nav a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:13px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:0 18px 30px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,1fr)}.columns,.columns.three,.prototype-links,.split{grid-template-columns:1fr}.checklist{grid-template-columns:1fr}.hero h1{font-size:29px}.page-hero h1{font-size:27px}.top-actions .hide-mobile{display:none}}
+@media(max-width:460px){.wrap{padding:0 11px;margin-top:14px}.topbar-inner{padding:11px 12px}.subtitle{display:none}.brand{font-size:16px}.quick-grid{grid-template-columns:1fr}.hero,.section,.page-hero{padding:19px}.section h2{font-size:21px}.hero h1{font-size:25px}}
+
+/* v1.0.1 hierarchy refinement */
+.section-head .eyebrow{font-size:22px;line-height:1.3;font-weight:800;color:var(--text);letter-spacing:0}
+.section-head h2{font-size:16px;line-height:1.5;font-weight:700;color:var(--muted);margin:5px 0 0}
+.checklist{grid-template-columns:1fr}
+.check{display:flex!important;width:100%;margin:0}
+@media(max-width:460px){.section-head .eyebrow{font-size:20px}.section-head h2{font-size:15px}}
+
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand-wrap" href="index.html"><div class="brand">产后家庭照护助手</div><div class="subtitle">主题知识库 · 恶露与产后出血</div></a><div class="top-actions"><a class="pill hide-mobile" href="myths.html">🔎 查说法</a><a class="pill danger" href="#urgent">🚨 出现异常</a></div></div></header>
+<main class="wrap">
+<section class="page-hero card"><div class="breadcrumb"><a href="index.html">首页</a> / 按问题 / 恶露与产后出血</div><div class="eyebrow">主题知识库 · 恶露与出血</div><h1>恶露与产后出血：什么是正常变化，什么不能当成“在排干净”</h1><p>恶露是产后子宫修复的一部分。判断的核心不是死记颜色，而是看总体是否逐渐减少，并及时识别异常大量出血、感染和继发性产后出血。</p><div class="mode-tabs"><button class="mode-tab active" data-mode="self">本人看</button><button class="mode-tab" data-mode="family">家属看</button></div></section>
+
+<section class="mode-content" data-mode="self">
+<section class="section card"><div class="section-head"><div><div class="eyebrow">先理解恶露是什么</div><h2>它不是“毒素”，也不是越多越好</h2></div></div><div class="task"><p>宝宝和胎盘娩出以后，子宫内膜和胎盘附着部位需要逐渐修复。血液、黏液和组织等会从阴道排出，这就是恶露（lochia）。无论阴道分娩还是剖宫产都会有恶露，因为它主要来自子宫内部的修复过程，而不是来自阴道伤口。</p></div><div class="myth"><h3>常见家庭观念：恶露要尽量“排得多、排得干净”</h3><p>医学上并不存在“出得越多越干净”的目标。正常方向恰恰是随着子宫修复逐渐减少。故意通过大量活动、酒类、草药或其他方法追求更多出血，没有必要，也可能掩盖真正的异常出血。</p></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">常见时间线</div><h2>颜色和量会变化，但不是每个人都按同一张日历走</h2></div></div><div class="timeline">
+<div class="task"><h3>最初几天</h3><p>ACOG官方患者用书描述，恶露通常比较多、鲜红，可以夹有少量小血块。</p></div>
+<div class="task"><h3>大约1周</h3><p>常逐渐变成粉红或褐色，量减少。哺乳时子宫收缩，可能短时间感觉有一股恶露流出。</p></div>
+<div class="task"><h3>大约2周</h3><p>常进一步转为浅褐色或黄色，并继续减少。</p></div>
+<div class="task"><h3>之后数周</h3><p>恶露继续变淡直至消失。ACOG患者用书给出的常见范围是约6—8周，但持续时间差异很大，有的人明显更早结束。</p></div>
+</div><div class="callout ok"><strong>不要机械对色卡</strong><p>比“今天是不是必须变成某种颜色”更重要的是：和前几天相比，量是不是总体下降，有没有伴随异味、发热、加重腹痛、头晕或心慌。</p></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">哪些变化仍可能属于常见情况</div><h2>短暂变化可以观察，但要结合量和全身症状</h2></div></div><div class="priority">
+<div class="priority-item"><b>哺乳时突然流出一些</b><p>催产素促进子宫收缩，哺乳时可能感觉恶露短时间增加。</p></div>
+<div class="priority-item"><b>活动后颜色暂时变红或量稍多</b><p>如果休息后很快恢复、总体趋势仍向下，可以先降低活动量观察。若持续鲜红或明显增多，则应联系医疗人员。</p></div>
+<div class="priority-item"><b>剖宫产后仍有恶露</b><p>这是正常的，因为子宫内部同样需要修复。剖宫产并不会把恶露“清干净”。</p></div>
+<div class="priority-item"><b>持续时间和别人不一样</b><p>有人数周结束，有人持续更久。单纯“还没完全没有”不能决定正常与否。</p></div>
+</div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">卫生与日常护理</div><h2>用卫生巾观察量，保持清洁，不需要反复消毒</h2></div></div><div class="task"><ul><li>产后恶露期间优先使用产褥垫或卫生巾，方便观察出血量和颜色。</li><li>ACOG患者用书明确建议这段时间不要使用卫生棉条；等恶露停止并按医生建议再恢复阴道内用品。</li><li>NICE建议做好会阴卫生，包括每日淋浴清洁会阴、勤换卫生巾，并在更换前后洗手。</li><li>不需要为了“杀菌”反复用刺激性洗液冲洗阴道内部。</li></ul></div></section>
+
+<section id="urgent" class="section card"><div class="section-head"><div><div class="eyebrow">什么时候不能继续在家观察</div><h2>家庭使用时宁可把警戒线设得敏感一些</h2></div></div><div class="callout danger"><strong>立即就医或尽快获得紧急医疗评估</strong><p>CDC把“1小时浸透1片或更多卫生巾”、排出鸡蛋大小以上血块或组织，或产后阴道分泌物有明显恶臭列为需要立即获得医疗照护的警示信号。ACOG也把远高于正常恶露的持续大量出血视为产后出血。若同时有头晕、晕厥、心跳很快、呼吸困难、脸色苍白或明显虚弱，不要等待出血达到某个数字。</p></div>
+<div class="callout warn"><strong>为什么不同资料的数字看起来不完全一样？</strong><p>ACOG部分患者教育资料用“每小时浸透2片、持续1—2小时”描述非常严重的出血；CDC的公共卫生警示则采用更敏感的“1小时浸透1片或更多”。这个网站用于家庭早期识别，因此采用CDC更敏感的阈值：达到后就应立即获得医疗评估，而不是等到更严重。</p></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">产后出血并不只发生在生产当天</div><h2>已经回家、甚至过了几周，仍可能需要警惕</h2></div></div><div class="task"><p>ACOG指出，产后出血最常发生在分娩后24小时以内，但也可能延后发生，甚至可出现在产后12周内。因此“恶露已经少了又突然大量鲜红”尤其值得重视，不要简单理解成“又开始排了”。</p></div></section>
+</section>
+
+<section class="mode-content hidden" data-mode="family">
+<section class="section card"><div class="section-head"><div><div class="eyebrow">家属最需要理解的核心</div><h2>恶露不是“排毒”，异常出血也不能靠经验继续观察</h2></div><span class="tag">家属模式</span></div>
+<div class="family-block"><h3>为什么产后会一直有分泌物和出血</h3><p>胎盘离开子宫后，子宫内部需要逐渐止血和修复。恶露就是这个修复过程中排出的血液、黏液和组织。因此剖宫产也会有恶露；它与“顺产时阴道有没有受伤”不是一回事。</p></div>
+<div class="family-block"><h3>为什么恶露不是越多越好</h3><p>正常修复时，子宫收缩、血管闭合，排出物应该总体越来越少。如果突然流很多血，医学上首先考虑的是异常出血，而不是“淤血终于排出来了”。把大量出血解释成好现象，最大的风险是延误救治。</p></div>
+<div class="family-block"><h3>为什么不能靠红糖水、酒类或大量活动“催恶露”</h3><p>没有必要人为追求更多出血。产妇真正需要的是正常进食、补水、适度活动和观察恢复趋势。如果某种做法使出血明显增加，应该停下来评估，而不是认为“更有效”。涉及中药、药酒或其他促进“活血”的产品，应先咨询医生，尤其是在出血仍较多、贫血或正在使用其他药物时。</p></div>
+<div class="family-block"><h3>家里怎样观察最实用</h3><p>不需要称卫生巾重量，也不用每天拍照对颜色。记住四件事即可：是不是总体越来越少；有没有1小时就浸透卫生巾；有没有很大的血块或组织；有没有恶臭、发热、加重腹痛、头晕心慌。出现后面这些情况就应该联系医疗人员。</p></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">遇到出血时家属怎么做</div><h2>先判断安全，不争论“是不是正常月子现象”</h2></div></div><div class="checklist">
+<label class="check"><input type="checkbox"><span>如果1小时浸透1片或更多卫生巾，立即联系医疗机构或前往急诊。</span></label>
+<label class="check"><input type="checkbox"><span>如果有鸡蛋大小以上血块、组织样物质、晕厥、呼吸困难、心跳很快或极度虚弱，按紧急情况处理。</span></label>
+<label class="check"><input type="checkbox"><span>如果恶露有强烈异味并伴发热或腹痛，考虑感染可能，及时就医。</span></label>
+<label class="check"><input type="checkbox"><span>不要在大量出血时继续要求产妇走动、发汗、喝“活血”的饮品或等待所谓“排干净”。</span></label>
+</div></section></section>
+
+<section class="section card"><div class="source-box"><h3>本页主要依据</h3><ul>
+<li><a href="https://www.acog.org/womens-health/experts-and-stories/the-latest/3-conditions-to-watch-for-after-childbirth">ACOG：3 Conditions to Watch for After Childbirth</a></li>
+<li><a href="https://www.acog.org/womens-health/faqs/postpartum-pain-management">ACOG：Postpartum Pain Management</a></li>
+<li><a href="https://www.cdc.gov/hearher/maternal-warning-signs/index.html">CDC HEAR HER：Urgent Maternal Warning Signs</a></li>
+<li><a href="https://www.nice.org.uk/guidance/ng194/resources/postnatal-care-pdf-66142082148037">NICE NG194：Postnatal care（2026）</a></li>
+<li>ACOG《Your Pregnancy and Childbirth》第19章“Postpartum Bleeding”；Mayo Clinic《Guide to a Healthy Pregnancy》产后与剖宫产恢复章节。</li></ul><details><summary>为什么这里采用较敏感的出血阈值？</summary><p>不同患者教育材料为了不同场景使用的量化提示略有差异。家庭网站的目标是尽早识别危险，因此使用CDC“1小时浸透1片或更多卫生巾”作为立即就医的简单警戒线；如果伴随晕厥、呼吸困难、明显心悸或极度虚弱，不应等待任何数字阈值。</p></details></div></section>
+<div class="mini-nav"><a href="topic-diet.html">产后饮食</a><a href="d8-10.html">D8—10</a><a href="d11-14.html">D11—14</a><a href="index.html">回首页</a></div>
+<section class="section card"><div class="callout family"><strong>家里正在争论某个“坐月子说法”？</strong><p>可以直接进入 <a href="myths.html"><b>传统产后观念查询库</b></a>，用“水果、红糖、鸡汤、洗澡、腹带、堵奶、42天”等口语关键词查。</p></div></section></main><footer>v1.6 · 主题知识库 · 恶露与产后出血 · 本页用于家庭识别，不替代医生诊断</footer>
+<script>document.querySelectorAll('.mode-tab').forEach(btn=>btn.addEventListener('click',()=>{const mode=btn.dataset.mode;document.querySelectorAll('.mode-tab').forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('.mode-content').forEach(x=>x.classList.toggle('hidden',x.dataset.mode!==mode));}));</script>
+<script>if(new URLSearchParams(location.search).get('family')==='1'){const b=[...document.querySelectorAll('.mode-tab')].find(x=>x.dataset.mode==='family'); if(b)b.click();}</script></body></html>
