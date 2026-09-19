@@ -1,0 +1,79 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>D4—5 · 产后第4—5天｜产后家庭照护助手</title><style>
+:root{
+  --bg:#f6f7f3; --card:#fff; --text:#20251f; --muted:#687168; --line:#e1e5df;
+  --soft:#f1f4ef; --family:#f7f1e8; --family-line:#e4d7c4; --danger:#fff1ef;
+  --danger-line:#e7b0a8; --warn:#fff8e7; --warn-line:#e7d29d; --ok:#edf7ef;
+  --ok-line:#b8d5bc; --accent:#365c43; --accent-soft:#e8f0ea; --shadow:0 10px 32px rgba(26,36,29,.06);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.72}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:30;background:rgba(246,247,243,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1120px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand-wrap{text-decoration:none}.brand{font-size:18px;font-weight:800}.subtitle{font-size:12px;color:var(--muted)}
+.top-actions{display:flex;gap:8px;align-items:center}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 12px;font-size:13px;text-decoration:none}.pill.danger{background:var(--danger);border-color:#f0d0cb}
+.wrap{max-width:1120px;margin:24px auto 70px;padding:0 16px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:28px;display:grid;grid-template-columns:1.35fr .85fr;gap:28px;align-items:center}.eyebrow{font-size:13px;font-weight:800;color:#607063;letter-spacing:.05em}.hero h1{font-size:34px;line-height:1.22;margin:6px 0 10px}.hero p{margin:0;color:var(--muted)}
+.date-box{background:var(--soft);padding:18px;border-radius:16px}.date-box label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}.date-box input,.date-box button,.search-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:white}.date-box button{margin-top:9px;cursor:pointer;font-weight:800}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.quick{padding:20px;text-decoration:none;transition:.15s}.quick:hover{transform:translateY(-2px);border-color:#c7d0c7}.quick .icon{font-size:24px}.quick h2{font-size:19px;margin:8px 0 5px}.quick p{margin:0;color:var(--muted);font-size:14px}.quick.family{background:var(--family);border-color:var(--family-line)}.quick.danger{background:var(--danger);border-color:#f1d0ca}
+.section{padding:26px;margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}.section h2{font-size:24px;line-height:1.3;margin:4px 0 0}.tag{font-size:12px;background:var(--soft);padding:6px 10px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.columns{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.columns.three{grid-template-columns:repeat(3,1fr)}.panel{background:var(--soft);padding:17px;border-radius:15px}.panel h3{margin:0 0 7px;font-size:16px}.panel p{margin:0;color:#4f584f}
+.prototype-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.prototype-link{padding:20px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#fff}.prototype-link:hover{border-color:#aebcaf}.prototype-link .kicker{font-size:12px;font-weight:800;color:var(--muted)}.prototype-link h3{margin:5px 0 6px;font-size:18px}.prototype-link p{margin:0;color:var(--muted);font-size:14px}
+.page-hero{padding:25px 27px;margin-bottom:18px}.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:8px}.breadcrumb a{color:var(--muted)}.page-hero h1{font-size:30px;line-height:1.25;margin:3px 0 10px}.page-hero p{margin:0;color:var(--muted)}
+.mode-tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.mode-tab{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 13px;font-weight:750;cursor:pointer}.mode-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}.mode-content.hidden{display:none}
+.timeline{display:grid;gap:12px}.task{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.task h3{font-size:17px;margin:0 0 7px}.task p{margin:0;color:#4e574e}.task ul{margin:8px 0 0;padding-left:20px}.task li{margin:5px 0}.task.family{background:var(--family);border-color:var(--family-line)}
+.callout{border-radius:16px;padding:18px;border:1px solid var(--line);margin-top:13px}.callout strong{display:block;margin-bottom:5px}.callout p{margin:0}.callout.ok{background:var(--ok);border-color:var(--ok-line)}.callout.warn{background:var(--warn);border-color:var(--warn-line)}.callout.danger{background:var(--danger);border-color:var(--danger-line)}.callout.family{background:var(--family);border-color:var(--family-line)}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.check input{margin-top:5px;transform:scale(1.12)}.check span{font-size:14px}
+.family-block{background:var(--family);border:1px solid var(--family-line);border-radius:18px;padding:20px;margin-top:12px}.family-block h3{font-size:18px;margin:0 0 8px}.family-block p{margin:0 0 10px}.family-block p:last-child{margin-bottom:0}.family-block ul{margin:8px 0 0;padding-left:20px}
+.myth{border-left:4px solid #cfaa70;padding:15px 16px;background:#fbf7f0;border-radius:0 14px 14px 0;margin-top:14px}.myth h3{margin:0 0 7px;font-size:17px}.myth p{margin:0 0 8px}.myth p:last-child{margin-bottom:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}.branch{border:1px solid var(--line);border-radius:16px;padding:18px}.branch h3{margin:0 0 8px;font-size:17px}.branch p{margin:0 0 9px}.branch ul{margin:0;padding-left:20px}
+.priority{display:grid;gap:10px}.priority-item{border:1px solid var(--line);border-radius:15px;padding:15px}.priority-item b{display:block;margin-bottom:4px}.priority-item p{margin:0;color:#4f584f}
+.source-box{background:#fafbf8;border:1px dashed #cbd3c8;border-radius:15px;padding:17px}.source-box h3{font-size:15px;margin:0 0 7px}.source-box p,.source-box li{color:var(--muted);font-size:13px}.source-box p{margin:0}.source-box ul{margin:8px 0 0;padding-left:20px}.source-box a{color:#315f42}
+details{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}summary{cursor:pointer;font-weight:800;color:#425247}
+.note{font-size:13px;color:var(--muted)}.mini-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.mini-nav a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:13px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:0 18px 30px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,1fr)}.columns,.columns.three,.prototype-links,.split{grid-template-columns:1fr}.checklist{grid-template-columns:1fr}.hero h1{font-size:29px}.page-hero h1{font-size:27px}.top-actions .hide-mobile{display:none}}
+@media(max-width:460px){.wrap{padding:0 11px;margin-top:14px}.topbar-inner{padding:11px 12px}.subtitle{display:none}.brand{font-size:16px}.quick-grid{grid-template-columns:1fr}.hero,.section,.page-hero{padding:19px}.section h2{font-size:21px}.hero h1{font-size:25px}}
+
+/* v1.0.1 hierarchy refinement */
+.section-head .eyebrow{font-size:22px;line-height:1.3;font-weight:800;color:var(--text);letter-spacing:0}
+.section-head h2{font-size:16px;line-height:1.5;font-weight:700;color:var(--muted);margin:5px 0 0}
+.checklist{grid-template-columns:1fr}
+.check{display:flex!important;width:100%;margin:0}
+@media(max-width:460px){.section-head .eyebrow{font-size:20px}.section-head h2{font-size:15px}}
+
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand-wrap" href="index.html"><div class="brand">产后家庭照护助手</div><div class="subtitle">D4—5 · 产后第4—5天</div></a><div class="top-actions"><a class="pill hide-mobile" href="d3.html">上一页</a><a class="pill hide-mobile" href="myths.html">🔎 查说法</a><a class="pill danger" href="#urgent">🚨 出现异常</a></div></div></header>
+<main class="wrap"><section class="page-hero card"><div class="breadcrumb"><a href="index.html">首页</a> / 按时间 / D4—5</div><div class="eyebrow">产后第4—5天</div><h1>乳汁建立进入高峰，家庭照护开始真正影响恢复质量</h1><p>这两天常常是“医院保护期结束、家庭照护真正开始”的时候。乳房、排便、睡眠、伤口和情绪问题可能同时出现，所以更需要按轻重缓急处理，而不是加入更多“月子任务”。</p><div class="mode-tabs"><button class="mode-tab active" data-mode="self">本人看</button><button class="mode-tab" data-mode="family">家属看</button></div></section>
+<section class="mode-content" data-mode="self">
+<section class="section card"><div class="section-head"><div><div class="eyebrow">这两天最重要的事</div><h2>乳汁建立、第一次排便和回家后的疲劳感常在这里集中出现</h2></div><span class="tag">D4—5</span></div><div class="checklist">
+<label class="check"><input type="checkbox"><span><b>乳房：</b>第3—5天常是乳房充盈高峰。两侧一起胀常见；单侧局部红痛加重、发热寒战则需要警惕乳腺炎谱系问题。</span></label>
+<label class="check"><input type="checkbox"><span><b>喂养：</b>如果母乳喂养，重点看宝宝是否能有效含接和吞咽、排尿排便及体重趋势，而不是只看吸奶器能吸出多少。</span></label>
+<label class="check"><input type="checkbox"><span><b>排便：</b>到第4天仍完全没有排便，尤其伴腹胀疼痛、明显用力困难时，应该主动联系医疗团队，不必继续硬扛。</span></label>
+<label class="check"><input type="checkbox"><span><b>伤口：</b>会阴或剖宫产切口应总体趋于稳定或改善；疼痛越来越重、异味、红肿渗液不是“正常恢复”。</span></label>
+<label class="check"><input type="checkbox"><span><b>情绪和睡眠：</b>baby blues 仍可存在。真正需要家属帮忙的是把睡眠、进食和生活任务保护下来。</span></label>
+<label class="check"><input type="checkbox"><span><b>血压/头痛：</b>即使孕期血压一直正常，产后仍可能出现先兆子痫相关问题；严重头痛、视力改变、面手突然明显肿胀应及时评估。</span></label>
+</div></section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">母乳建立</div><h2>“奶量够不够”要看宝宝，不要只看乳房和吸奶器</h2></div></div><div class="task"><p>ACOG指出，如果平均每天喂养约8—12次、宝宝从第4—5天起体重趋势稳定，并逐渐达到平均每天6—8片湿尿布等指标，通常可以帮助判断摄入是否足够。单次吸奶器吸出的毫升数并不能准确代表宝宝实际能吃到多少。</p></div><div class="callout warn"><strong>需要尽早求助</strong><p>宝宝总是含不住、吃奶后仍持续非常烦躁或嗜睡、尿布明显不足、黄疸加重，或者你因为疼痛已经抗拒每次喂养，都值得尽早找儿科或泌乳专业人员评估。</p></div><div class="myth"><h3>传统家庭做法：为了“奶多”，必须喝很多汤、把乳房吸到完全空</h3><p>乳汁主要依靠激素和有效移出乳汁形成供需反馈。大量汤并不会直接转化为乳汁；过度排乳则可能把身体推向过量泌乳。更实际的是正常饮水、均衡吃饭、规律有效喂养和及时处理含接问题。</p></div></section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">第一次排便</div><h2>排得出来比“忍住不动伤口”更重要</h2></div></div><div class="task"><p>第一次排便可能让人紧张，尤其有会阴裂伤、痔疮或剖宫产切口时。一般情况下，正常排便不会把缝线挣开。保持大便柔软，比憋着更重要。如果到第4天仍完全没有排便，或伴明显腹胀、疼痛、无法排气，可以联系医疗团队讨论软便剂或其他处理。</p></div></section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">伤口和恶露</div><h2>恢复的关键是“趋势变好”</h2></div></div><div class="split"><div class="branch"><h3>会阴</h3><ul><li>肿胀和疼痛应逐渐缓解。</li><li>每天清洁、勤换卫生用品。</li><li>疼痛加重、异味分泌物、明显肿胀或伤口裂开，应当天就医评估。</li></ul></div><div class="branch"><h3>剖宫产切口</h3><ul><li>起床和咳嗽时仍可有牵拉痛。</li><li>注意红、热、肿、渗液、裂开和疼痛趋势。</li><li>不要因为“怕动伤口”长期卧床，也不要提前做腹部强化训练。</li></ul></div></div><div class="task"><p>恶露仍可能是红色或暗红色，但总体应逐渐减少。活动增加后短暂变红可以观察；如果明显越来越多、突然很大或伴臭味、发热、腹痛，则需要评估。</p></div></section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">活动与盆底</div><h2>可以开始“找回控制感”，不需要开始“修复项目”</h2></div></div><div class="task"><p>如果没有医生限制，可以继续增加短距离步行，并开始非常轻柔地感受盆底肌“收紧—完全放松”的动作。目标是恢复协调，而不是追求次数和力量。如果有明显会阴疼痛、Ⅲ—Ⅳ度裂伤、排尿困难或盆底下坠感，先咨询医生或盆底物理治疗师。</p></div><div class="myth"><h3>常见家庭做法：产后几天就要绑紧腹带，把骨盆和肚子“收回去”</h3><p>腹带在某些剖宫产者中可用于短期支撑和减轻活动不适，但它不能把骨盆“勒回原位”，也不能替代盆底和核心功能恢复。过紧、长时间束缚还可能增加不适。是否使用、怎么用，应以舒适和功能为目的，而不是追求外形立即改变。</p></div></section>
+<section id="urgent" class="section card"><div class="section-head"><div><div class="eyebrow">这两天需要特别警惕</div><h2>严重头痛、发热和伤口恶化都不能拖</h2></div></div><div class="callout danger"><strong>立即或当天联系医疗人员</strong><p>持续或加重的严重头痛、视力变化、胸痛或呼吸困难、单侧腿肿痛、体温≥38°C、出血突然明显增加或浸透卫生巾、恶露恶臭并伴腹痛、乳房红痛伴全身发热寒战、会阴或切口裂开/流脓、无法排尿、持续严重腹胀或呕吐、明显精神行为异常。</p></div></section></section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">今天怎么吃</div><h2>泌乳建立高峰期，重点是规律吃饭而不是“催奶食谱”</h2></div></div><div class="task"><h3>哺乳期通常需要额外能量</h3><p>CDC 2026年资料给出的常用估算是较孕前额外约330—400 kcal/天；ACOG患者资料写约450—500 kcal/天。无需数卡路里，可根据饥饿、活动和是否纯母乳增加一到两次高质量加餐。</p></div><div class="task"><h3>广泛忌口通常没有必要</h3><p>CDC明确指出哺乳期一般无需避免特定食物。水果、蔬菜、豆类或有香味的正常家庭食物，不需要因为“会过奶”一律停掉。</p></div><p class="note">详细见：<a href="topic-diet.html"><b>产后饮食、营养与补剂</b></a></p></section>
+<section class="mode-content hidden" data-mode="family">
+<section class="section card"><div class="section-head"><div><div class="eyebrow">家属这两天最需要理解</div><h2>“帮忙”最重要的是减少压力，而不是增加新的恢复任务</h2></div><span class="tag">家属模式</span></div>
+<div class="family-block"><h3>为什么不能把“奶多”当成唯一目标</h3><p>母乳喂养的目标是宝宝有效获得足够营养，同时母亲乳房保持舒适和健康。过量泌乳并不是越多越好，它可能带来反复胀奶、喷乳过快、乳房炎症等问题。家属应该支持“按宝宝需要建立供需”，而不是用吸奶量或乳房硬不硬评价产妇。</p></div>
+<div class="family-block"><h3>为什么这时更要保护睡眠</h3><p>回家后很多家庭会立刻进入“大家围着宝宝转”的状态，但产妇常同时经历乳房充盈、伤口痛、第一次排便和激素变化。睡眠缺口越大，疼痛和情绪越难承受。家属要把宝宝照护拆开：除了必须由产妇完成的喂养，其余环节尽量接手。</p></div>
+<div class="family-block"><h3>为什么不能用“月子里不能动”来解释所有疼痛</h3><p>产后几天有疼痛很常见，但医学上更重视疼痛的趋势。如果昨天还能忍受，今天突然越来越痛，或者需要越来越多止痛药，应该考虑伤口感染、血肿等问题，而不是告诉她“生完都这样”。</p></div>
+<div class="family-block"><h3>为什么“收腹、收骨盆”不应该成为当前任务</h3><p>妊娠造成的是腹壁、盆底、韧带和姿势系统整体变化，不可能靠几天绑紧就恢复。前一两周更重要的是安全活动、排便、睡眠、伤口和盆底基础功能。外形恢复会晚得多。</p></div></section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">家属这两天可以直接执行</div><h2>帮助她减少决策和中断</h2></div></div><div class="checklist">
+<label class="check"><input type="checkbox"><span>把每天吃什么、买什么、谁来探视等琐事尽量提前安排，不让产妇反复做决定。</span></label>
+<label class="check"><input type="checkbox"><span>如果母乳喂养，观察的是含接和宝宝状态，不以吸奶器毫升数评价“有奶没奶”。</span></label>
+<label class="check"><input type="checkbox"><span>出现伤口越来越痛、恶露臭、发热、严重头痛等情况时，主动协助就医。</span></label>
+<label class="check"><input type="checkbox"><span>不要安排所谓“骨盆矫正”“通乳排残奶”等高强度项目；当前恢复以舒适、安全和功能为先。</span></label>
+</div></section><section class="section card"><div class="section-head"><div><div class="eyebrow">家属饮食提醒</div><h2>把照顾变成“让她吃得正常”，不是“替她制定禁忌”</h2></div></div><div class="family-block"><h3>不要一看到宝宝哭就怪产妇“奶不够、吃得不补”</h3><p>宝宝哭有很多原因。奶量判断要看吞咽、尿布、体重和专业评估，而不是看产妇喝了几碗汤。</p></div></section>
+</section>
+<section class="section card"><div class="source-box"><h3>本页主要依据</h3><ul><li>饮食营养部分详见 <a href="topic-diet.html">《产后饮食、营养与补剂》</a>，汇总CDC、ACOG、WHO、FDA/EPA当前建议。</li><li><a href="https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges">ACOG：Breastfeeding Challenges</a>（第3—5天乳房充盈、喂养频率与摄入线索）</li><li><a href="https://www.bfmed.org/protocols">Academy of Breastfeeding Medicine：Protocol #36</a>（炎症谱系、避免过度排乳与暴力按摩）</li><li><a href="https://www.nice.org.uk/guidance/ng194/chapter/Recommendations">NICE NG194</a>（会阴伤口、出血、乳房、膀胱与肠道）</li><li><a href="https://www.acog.org/womens-health/faqs/postpartum-pain-management">ACOG：Postpartum Pain Management</a></li><li><a href="https://www.cdc.gov/hearher/maternal-warning-signs/index.html">CDC HEAR HER</a></li><li>Mayo Clinic《Guide to a Healthy Pregnancy》第19章；ACOG《Your Pregnancy and Childbirth》第19章</li></ul><details><summary>资料使用说明</summary><p>医疗安全边界、危险信号和需要就医的情形优先依据当前正式指南；ACOG、Mayo Clinic 等患者教育书籍用于补足恢复过程和家庭解释。若资料存在差异，以更新、更高层级的指南为准。</p></details></div></section>
+<div class="mini-nav"><a href="d3.html">← D3 产后第3天</a><a href="index.html">回首页</a><a href="d6-7.html">D6—7 产后第6—7天 →</a></div></main><footer>v1.6 · D4—5 · 产后第4—5天正式版 · 实际恢复仍以分娩方式、伤口、失血、血压和出院医嘱为准</footer><script>document.querySelectorAll('.mode-tab').forEach(btn=>btn.addEventListener('click',()=>{
+  const mode=btn.dataset.mode;
+  document.querySelectorAll('.mode-tab').forEach(x=>x.classList.toggle('active',x===btn));
+  document.querySelectorAll('.mode-content').forEach(x=>x.classList.toggle('hidden',x.dataset.mode!==mode));
+}));</script><script>if(new URLSearchParams(location.search).get('family')==='1'){const b=[...document.querySelectorAll('.mode-tab')].find(x=>x.dataset.mode==='family'); if(b)b.click();}</script></body></html>
