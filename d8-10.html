@@ -1,0 +1,94 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>D8—10 · 产后第8—10天｜产后家庭照护助手</title><style>
+:root{
+  --bg:#f6f7f3; --card:#fff; --text:#20251f; --muted:#687168; --line:#e1e5df;
+  --soft:#f1f4ef; --family:#f7f1e8; --family-line:#e4d7c4; --danger:#fff1ef;
+  --danger-line:#e7b0a8; --warn:#fff8e7; --warn-line:#e7d29d; --ok:#edf7ef;
+  --ok-line:#b8d5bc; --accent:#365c43; --accent-soft:#e8f0ea; --shadow:0 10px 32px rgba(26,36,29,.06);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.72}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:30;background:rgba(246,247,243,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1120px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand-wrap{text-decoration:none}.brand{font-size:18px;font-weight:800}.subtitle{font-size:12px;color:var(--muted)}
+.top-actions{display:flex;gap:8px;align-items:center}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 12px;font-size:13px;text-decoration:none}.pill.danger{background:var(--danger);border-color:#f0d0cb}
+.wrap{max-width:1120px;margin:24px auto 70px;padding:0 16px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:28px;display:grid;grid-template-columns:1.35fr .85fr;gap:28px;align-items:center}.eyebrow{font-size:13px;font-weight:800;color:#607063;letter-spacing:.05em}.hero h1{font-size:34px;line-height:1.22;margin:6px 0 10px}.hero p{margin:0;color:var(--muted)}
+.date-box{background:var(--soft);padding:18px;border-radius:16px}.date-box label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}.date-box input,.date-box button,.search-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:white}.date-box button{margin-top:9px;cursor:pointer;font-weight:800}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.quick{padding:20px;text-decoration:none;transition:.15s}.quick:hover{transform:translateY(-2px);border-color:#c7d0c7}.quick .icon{font-size:24px}.quick h2{font-size:19px;margin:8px 0 5px}.quick p{margin:0;color:var(--muted);font-size:14px}.quick.family{background:var(--family);border-color:var(--family-line)}.quick.danger{background:var(--danger);border-color:#f1d0ca}
+.section{padding:26px;margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}.section h2{font-size:24px;line-height:1.3;margin:4px 0 0}.tag{font-size:12px;background:var(--soft);padding:6px 10px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.columns{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.columns.three{grid-template-columns:repeat(3,1fr)}.panel{background:var(--soft);padding:17px;border-radius:15px}.panel h3{margin:0 0 7px;font-size:16px}.panel p{margin:0;color:#4f584f}
+.prototype-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.prototype-link{padding:20px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#fff}.prototype-link:hover{border-color:#aebcaf}.prototype-link .kicker{font-size:12px;font-weight:800;color:var(--muted)}.prototype-link h3{margin:5px 0 6px;font-size:18px}.prototype-link p{margin:0;color:var(--muted);font-size:14px}
+.page-hero{padding:25px 27px;margin-bottom:18px}.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:8px}.breadcrumb a{color:var(--muted)}.page-hero h1{font-size:30px;line-height:1.25;margin:3px 0 10px}.page-hero p{margin:0;color:var(--muted)}
+.mode-tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.mode-tab{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 13px;font-weight:750;cursor:pointer}.mode-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}.mode-content.hidden{display:none}
+.timeline{display:grid;gap:12px}.task{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.task h3{font-size:17px;margin:0 0 7px}.task p{margin:0;color:#4e574e}.task ul{margin:8px 0 0;padding-left:20px}.task li{margin:5px 0}.task.family{background:var(--family);border-color:var(--family-line)}
+.callout{border-radius:16px;padding:18px;border:1px solid var(--line);margin-top:13px}.callout strong{display:block;margin-bottom:5px}.callout p{margin:0}.callout.ok{background:var(--ok);border-color:var(--ok-line)}.callout.warn{background:var(--warn);border-color:var(--warn-line)}.callout.danger{background:var(--danger);border-color:var(--danger-line)}.callout.family{background:var(--family);border-color:var(--family-line)}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.check input{margin-top:5px;transform:scale(1.12)}.check span{font-size:14px}
+.family-block{background:var(--family);border:1px solid var(--family-line);border-radius:18px;padding:20px;margin-top:12px}.family-block h3{font-size:18px;margin:0 0 8px}.family-block p{margin:0 0 10px}.family-block p:last-child{margin-bottom:0}.family-block ul{margin:8px 0 0;padding-left:20px}
+.myth{border-left:4px solid #cfaa70;padding:15px 16px;background:#fbf7f0;border-radius:0 14px 14px 0;margin-top:14px}.myth h3{margin:0 0 7px;font-size:17px}.myth p{margin:0 0 8px}.myth p:last-child{margin-bottom:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}.branch{border:1px solid var(--line);border-radius:16px;padding:18px}.branch h3{margin:0 0 8px;font-size:17px}.branch p{margin:0 0 9px}.branch ul{margin:0;padding-left:20px}
+.priority{display:grid;gap:10px}.priority-item{border:1px solid var(--line);border-radius:15px;padding:15px}.priority-item b{display:block;margin-bottom:4px}.priority-item p{margin:0;color:#4f584f}
+.source-box{background:#fafbf8;border:1px dashed #cbd3c8;border-radius:15px;padding:17px}.source-box h3{font-size:15px;margin:0 0 7px}.source-box p,.source-box li{color:var(--muted);font-size:13px}.source-box p{margin:0}.source-box ul{margin:8px 0 0;padding-left:20px}.source-box a{color:#315f42}
+details{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}summary{cursor:pointer;font-weight:800;color:#425247}
+.note{font-size:13px;color:var(--muted)}.mini-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.mini-nav a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:13px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:0 18px 30px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,1fr)}.columns,.columns.three,.prototype-links,.split{grid-template-columns:1fr}.checklist{grid-template-columns:1fr}.hero h1{font-size:29px}.page-hero h1{font-size:27px}.top-actions .hide-mobile{display:none}}
+@media(max-width:460px){.wrap{padding:0 11px;margin-top:14px}.topbar-inner{padding:11px 12px}.subtitle{display:none}.brand{font-size:16px}.quick-grid{grid-template-columns:1fr}.hero,.section,.page-hero{padding:19px}.section h2{font-size:21px}.hero h1{font-size:25px}}
+
+/* v1.0.1 hierarchy refinement */
+.section-head .eyebrow{font-size:22px;line-height:1.3;font-weight:800;color:var(--text);letter-spacing:0}
+.section-head h2{font-size:16px;line-height:1.5;font-weight:700;color:var(--muted);margin:5px 0 0}
+.checklist{grid-template-columns:1fr}
+.check{display:flex!important;width:100%;margin:0}
+@media(max-width:460px){.section-head .eyebrow{font-size:20px}.section-head h2{font-size:15px}}
+
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand-wrap" href="index.html"><div class="brand">产后家庭照护助手</div><div class="subtitle">D8—10 · 产后第8—10天</div></a><div class="top-actions"><a class="pill hide-mobile" href="d6-7.html">上一页</a><a class="pill hide-mobile" href="myths.html">🔎 查说法</a><a class="pill danger" href="#urgent">🚨 出现异常</a></div></div></header>
+<main class="wrap">
+<section class="page-hero card"><div class="breadcrumb"><a href="index.html">首页</a> / 按时间 / D8—10</div><div class="eyebrow">产后第8—10天</div><h1>第二周开始：身体在恢复，但真正要看的是“是否持续向好”</h1><p>这一阶段通常已经不像最初几天那样变化剧烈。重点从“每个小时发生什么”转向：恶露、伤口、排尿排便、乳房、睡眠和情绪是不是沿着改善的方向走。</p><div class="mode-tabs"><button class="mode-tab active" data-mode="self">本人看</button><button class="mode-tab" data-mode="family">家属看</button></div></section>
+
+<section class="mode-content" data-mode="self">
+<section class="section card"><div class="section-head"><div><div class="eyebrow">这三天最重要的事</div><h2>不要追求“恢复得像没生过”，先确认6个趋势</h2></div><span class="tag">D8—10</span></div><div class="checklist">
+<label class="check"><input type="checkbox"><span><b>恶露总体减少：</b>颜色可能已经转为粉红、褐色或更淡；偶尔变化不必机械对照日历，但持续增多或突然大量鲜红不正常。</span></label>
+<label class="check"><input type="checkbox"><span><b>疼痛总体减轻：</b>会阴、宫缩痛或剖宫产切口仍可能不舒服，但趋势应该是越来越可管理，而不是需要越来越多止痛药。</span></label>
+<label class="check"><input type="checkbox"><span><b>伤口没有恶化：</b>没有越来越明显的红、肿、热、渗液、异味或裂开。</span></label>
+<label class="check"><input type="checkbox"><span><b>排尿排便逐渐顺畅：</b>轻微漏尿可以暂时存在；明显排不净、尿痛持续、无法控制大便或排气要主动提出。</span></label>
+<label class="check"><input type="checkbox"><span><b>活动耐受略有增加：</b>走动后没有明显头晕、伤口加痛、盆底坠胀或恶露持续增加。</span></label>
+<label class="check"><input type="checkbox"><span><b>情绪没有一路下滑：</b>baby blues可以还在，但通常应逐渐缓解；越来越重或影响吃饭、睡觉和照护功能，需要尽早求助。</span></label>
+</div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">恶露</div><h2>现在看“总趋势”，不要每天盯颜色打卡</h2></div></div><div class="task"><p>ACOG患者教育资料描述，恶露在最初几天通常较红、较多，约一周后常转为粉红或褐色，之后继续变淡。个体差异很大，因此不需要因为第8天仍有少量红色就自动判断异常；更有意义的是量是否总体减少、有没有突然明显变多、是否伴异味、发热、头晕或腹痛。</p></div><div class="callout ok"><strong>想更详细判断？</strong><p><a href="topic-lochia.html"><b>查看《恶露与产后出血：正常变化、异常出血和什么时候就医》</b></a>。这个主题页以后会被整个产后时间线共同引用。</p></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">会阴与剖宫产切口</div><h2>到第二周，疼痛“不改善”比“还有点痛”更值得关注</h2></div></div><div class="split"><div class="branch"><h3>阴道分娩</h3><p>会阴的肿胀和疼痛通常应比最初几天轻。NICE提醒，如果疼痛没有缓解反而加重、止痛需求增加、出现明显异味分泌物、肿胀或伤口裂开，应安排评估；会阴伤口裂开需要当天联系产科服务。</p></div><div class="branch"><h3>剖宫产</h3><p>切口仍可有牵拉、麻木、痒或轻度酸痛，但不应越来越红、热、肿或流液。发热、伤口裂开、脓性渗液或明显加重的腹痛需要联系医疗人员。</p></div></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">活动与休息</div><h2>“多走一点”可以，“赶紧恢复正常生活”不必</h2></div></div><div class="task"><p>如果是健康妊娠、无并发症的阴道分娩，ACOG认为产后几天、身体感觉允许时即可逐渐恢复轻度运动；剖宫产或存在并发症则应根据医生建议决定。现在最适合的仍是可随时停止的轻度活动，例如短时间步行和日常起居，而不是通过做饭、拖地、抱重物来“锻炼”。</p></div><div class="callout warn"><strong>把活动降一级的信号</strong><p>活动后恶露持续明显增加或变鲜红、会阴/切口疼痛加重、明显漏尿或阴道坠胀、头晕、心慌，或者第二天疲劳明显恶化，都说明进阶可能太快。</p></div><div class="myth"><h3>常见家庭做法：第二周看起来恢复不错，就该多做点事情“活动筋骨”</h3><p>恢复活动的目标是逐步找回功能，不是尽早恢复家务劳动。家务往往包含久站、弯腰、搬举和无法随时停下的重复动作；这和短距离步行不是同一种负荷。更合理的分工仍然是家属承担家务，产妇用可控的活动恢复身体。</p></div></section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">情绪与睡眠</div><h2>baby blues 应该逐渐有“往回走”的迹象</h2></div></div><div class="task"><p>ACOG指出，baby blues常在产后2—3天出现，多数会在几天至1—2周内改善。因此D8—10仍然情绪敏感并不罕见，但如果低落、焦虑、失眠或无助感越来越重，或者已经明显影响吃饭、睡觉、照顾自己和宝宝，就不要继续等“过了月子自然会好”。</p></div></section>
+
+<section id="urgent" class="section card"><div class="section-head"><div><div class="eyebrow">这一阶段仍需立即处理</div><h2>第二周开始并不代表严重产后问题已经过去</h2></div></div><div class="callout danger"><strong>立即就医或获得紧急医疗评估</strong><p>1小时浸透1片或更多卫生巾、排出鸡蛋大小以上血块或组织；胸痛、呼吸困难、晕厥；持续或加重的严重头痛、视力改变；体温≥38°C；严重持续腹痛；单侧腿或手臂明显红肿痛；出现自伤或伤害宝宝的想法、幻觉或明显精神行为异常。不要为了“凑够某个数字”而延误就医。</p></div></section>
+</section>
+
+<section class="section card"><div class="section-head"><div><div class="eyebrow">第二周怎么吃</div><h2>开始关注“多样性”，而不是继续扩大忌口清单</h2></div></div><div class="task"><h3>哺乳不意味着必须吃两个人的量</h3><p>需要的只是适度额外能量，不是翻倍。三餐＋根据饥饿加餐通常比不停进补更容易维持。</p></div><div class="task"><h3>低汞鱼类可以成为常规食物</h3><p>FDA/EPA建议哺乳期每周2—3份低汞鱼，总量约225—340 g；鱼类提供蛋白质、DHA/EPA等，不需要因为“海鲜发物”一概排除。</p></div><p class="note">详细见：<a href="topic-diet.html"><b>产后饮食、营养与补剂</b></a></p></section>
+<section class="mode-content hidden" data-mode="family">
+<section class="section card"><div class="section-head"><div><div class="eyebrow">家属在第二周开始时要理解</div><h2>“恢复得不错”不是减少支持的理由，而是调整支持方式的时机</h2></div><span class="tag">家属模式</span></div>
+<div class="family-block"><h3>为什么现在仍然需要保护休息</h3><p>身体表面的疼痛可能已经减轻，但夜间频繁醒来、喂养、激素变化和连续一周的睡眠碎片化会继续积累疲劳。家属的帮助应该从“全天盯着她”转为更稳定的班表，例如固定承担夜间换尿布、拍嗝、清洁和白天家务，让产妇能得到可预期的休息。</p></div>
+<div class="family-block"><h3>为什么不能用“出血多少”判断恶露排得干不干净</h3><p>恶露是子宫内膜、血液和组织在产后修复过程中的排出物，正常方向是逐渐减少，而不是越多越好。突然大量出血不是“排得通”，而可能代表异常出血。尤其伴头晕、心慌、脸色苍白或大血块时，应优先就医。</p></div>
+<div class="family-block"><h3>为什么情绪问题不应只靠劝她“想开一点”</h3><p>产后情绪受激素骤变、睡眠不足、疼痛、喂养压力和心理适应共同影响。支持的关键不是争论她“有没有必要难过”，而是减少负担、保证睡眠、认真听她描述，并在症状加重或超过正常baby blues范围时帮助联系专业人员。</p></div>
+<div class="family-block"><h3>为什么现在不必追求瘦身和“收骨盆”</h3><p>产后第二周的主要任务仍是伤口、盆底、睡眠、喂养和整体体力恢复。体重、腹围或所谓“骨盆宽度”都不是判断恢复质量的核心指标。过早增加热量限制、负重训练或商业“骨盆矫正”反而可能干扰真正需要的恢复。</p></div>
+</section>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">家属这三天可以直接执行</div><h2>把支持从“临时帮忙”变成固定制度</h2></div></div><div class="checklist">
+<label class="check"><input type="checkbox"><span>固定每天至少一段不被探视、家务和非必要事务打断的休息时间。</span></label>
+<label class="check"><input type="checkbox"><span>每天简单确认一次恶露、严重头痛/视力变化、发热、伤口、乳房和情绪有没有明显恶化。</span></label>
+<label class="check"><input type="checkbox"><span>继续承担做饭、采购、清洁、洗衣和接待，不把“增加活动”理解成让产妇恢复家务。</span></label>
+<label class="check"><input type="checkbox"><span>如果产妇说“感觉不对”，先认真听并协助就医，而不是先用坐月子经验解释。</span></label>
+</div></section><section class="section card"><div class="section-head"><div><div class="eyebrow">家属饮食提醒</div><h2>把照顾变成“让她吃得正常”，不是“替她制定禁忌”</h2></div></div><div class="family-block"><h3>“发物”不应成为无限扩张的禁食清单</h3><p>哺乳期通常不需要因为海鲜、豆制品、蔬菜水果等预防性忌口。真正过敏或疾病限制应有明确依据。</p></div></section>
+</section>
+
+<section class="section card"><div class="source-box"><h3>本页主要依据</h3><ul><li>饮食营养部分详见 <a href="topic-diet.html">《产后饮食、营养与补剂》</a>，汇总CDC、ACOG、WHO、FDA/EPA当前建议。</li>
+<li><a href="https://www.acog.org/womens-health/faqs/exercise-after-pregnancy">ACOG：Exercise After Pregnancy（2024年复核）</a></li>
+<li><a href="https://www.acog.org/womens-health/faqs/postpartum-depression">ACOG：Postpartum Depression</a></li>
+<li><a href="https://www.nice.org.uk/guidance/ng194/resources/postnatal-care-pdf-66142082148037">NICE NG194：Postnatal care（2026）</a></li>
+<li><a href="https://www.cdc.gov/hearher/maternal-warning-signs/index.html">CDC HEAR HER：Urgent Maternal Warning Signs</a></li>
+<li>ACOG《Your Pregnancy and Childbirth》第19章；Mayo Clinic《Guide to a Healthy Pregnancy》第16章及产后相关内容。</li></ul><details><summary>资料使用说明</summary><p>危险信号和需要就医的情形优先采用当前正式指南；书籍用于解释恢复过程和实际生活场景。页面所列时间只是常见范围，不替代个体化出院医嘱。</p></details></div></section>
+<div class="mini-nav"><a href="d6-7.html">← D6—7</a><a href="d11-14.html">D11—14 →</a><a href="topic-lochia.html">恶露与产后出血专题</a><a href="index.html">回首页</a></div>
+</main><footer>v1.6 · D8—10 · 实际恢复仍以分娩方式、伤口、失血、血压和出院医嘱为准</footer>
+<script>document.querySelectorAll('.mode-tab').forEach(btn=>btn.addEventListener('click',()=>{const mode=btn.dataset.mode;document.querySelectorAll('.mode-tab').forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('.mode-content').forEach(x=>x.classList.toggle('hidden',x.dataset.mode!==mode));}));</script>
+<script>if(new URLSearchParams(location.search).get('family')==='1'){const b=[...document.querySelectorAll('.mode-tab')].find(x=>x.dataset.mode==='family'); if(b)b.click();}</script></body></html>
