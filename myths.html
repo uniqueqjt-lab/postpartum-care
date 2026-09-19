@@ -1,0 +1,509 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>传统产后观念查询｜产后家庭照护助手</title><style>
+:root{
+  --bg:#f6f7f3; --card:#fff; --text:#20251f; --muted:#687168; --line:#e1e5df;
+  --soft:#f1f4ef; --family:#f7f1e8; --family-line:#e4d7c4; --danger:#fff1ef;
+  --danger-line:#e7b0a8; --warn:#fff8e7; --warn-line:#e7d29d; --ok:#edf7ef;
+  --ok-line:#b8d5bc; --accent:#365c43; --accent-soft:#e8f0ea; --shadow:0 10px 32px rgba(26,36,29,.06);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.72}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:30;background:rgba(246,247,243,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1120px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand-wrap{text-decoration:none}.brand{font-size:18px;font-weight:800}.subtitle{font-size:12px;color:var(--muted)}
+.top-actions{display:flex;gap:8px;align-items:center}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 12px;font-size:13px;text-decoration:none}.pill.danger{background:var(--danger);border-color:#f0d0cb}
+.wrap{max-width:1120px;margin:24px auto 70px;padding:0 16px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:28px;display:grid;grid-template-columns:1.35fr .85fr;gap:28px;align-items:center}.eyebrow{font-size:13px;font-weight:800;color:#607063;letter-spacing:.05em}.hero h1{font-size:34px;line-height:1.22;margin:6px 0 10px}.hero p{margin:0;color:var(--muted)}
+.date-box{background:var(--soft);padding:18px;border-radius:16px}.date-box label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}.date-box input,.date-box button,.search-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:white}.date-box button{margin-top:9px;cursor:pointer;font-weight:800}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.quick{padding:20px;text-decoration:none;transition:.15s}.quick:hover{transform:translateY(-2px);border-color:#c7d0c7}.quick .icon{font-size:24px}.quick h2{font-size:19px;margin:8px 0 5px}.quick p{margin:0;color:var(--muted);font-size:14px}.quick.family{background:var(--family);border-color:var(--family-line)}.quick.danger{background:var(--danger);border-color:#f1d0ca}
+.section{padding:26px;margin-top:18px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}.section h2{font-size:24px;line-height:1.3;margin:4px 0 0}.tag{font-size:12px;background:var(--soft);padding:6px 10px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.columns{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.columns.three{grid-template-columns:repeat(3,1fr)}.panel{background:var(--soft);padding:17px;border-radius:15px}.panel h3{margin:0 0 7px;font-size:16px}.panel p{margin:0;color:#4f584f}
+.prototype-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.prototype-link{padding:20px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:#fff}.prototype-link:hover{border-color:#aebcaf}.prototype-link .kicker{font-size:12px;font-weight:800;color:var(--muted)}.prototype-link h3{margin:5px 0 6px;font-size:18px}.prototype-link p{margin:0;color:var(--muted);font-size:14px}
+.page-hero{padding:25px 27px;margin-bottom:18px}.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:8px}.breadcrumb a{color:var(--muted)}.page-hero h1{font-size:30px;line-height:1.25;margin:3px 0 10px}.page-hero p{margin:0;color:var(--muted)}
+.mode-tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.mode-tab{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 13px;font-weight:750;cursor:pointer}.mode-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}.mode-content.hidden{display:none}
+.timeline{display:grid;gap:12px}.task{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.task h3{font-size:17px;margin:0 0 7px}.task p{margin:0;color:#4e574e}.task ul{margin:8px 0 0;padding-left:20px}.task li{margin:5px 0}.task.family{background:var(--family);border-color:var(--family-line)}
+.callout{border-radius:16px;padding:18px;border:1px solid var(--line);margin-top:13px}.callout strong{display:block;margin-bottom:5px}.callout p{margin:0}.callout.ok{background:var(--ok);border-color:var(--ok-line)}.callout.warn{background:var(--warn);border-color:var(--warn-line)}.callout.danger{background:var(--danger);border-color:var(--danger-line)}.callout.family{background:var(--family);border-color:var(--family-line)}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.check input{margin-top:5px;transform:scale(1.12)}.check span{font-size:14px}
+.family-block{background:var(--family);border:1px solid var(--family-line);border-radius:18px;padding:20px;margin-top:12px}.family-block h3{font-size:18px;margin:0 0 8px}.family-block p{margin:0 0 10px}.family-block p:last-child{margin-bottom:0}.family-block ul{margin:8px 0 0;padding-left:20px}
+.myth{border-left:4px solid #cfaa70;padding:15px 16px;background:#fbf7f0;border-radius:0 14px 14px 0;margin-top:14px}.myth h3{margin:0 0 7px;font-size:17px}.myth p{margin:0 0 8px}.myth p:last-child{margin-bottom:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}.branch{border:1px solid var(--line);border-radius:16px;padding:18px}.branch h3{margin:0 0 8px;font-size:17px}.branch p{margin:0 0 9px}.branch ul{margin:0;padding-left:20px}
+.priority{display:grid;gap:10px}.priority-item{border:1px solid var(--line);border-radius:15px;padding:15px}.priority-item b{display:block;margin-bottom:4px}.priority-item p{margin:0;color:#4f584f}
+.source-box{background:#fafbf8;border:1px dashed #cbd3c8;border-radius:15px;padding:17px}.source-box h3{font-size:15px;margin:0 0 7px}.source-box p,.source-box li{color:var(--muted);font-size:13px}.source-box p{margin:0}.source-box ul{margin:8px 0 0;padding-left:20px}.source-box a{color:#315f42}
+details{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}summary{cursor:pointer;font-weight:800;color:#425247}
+.note{font-size:13px;color:var(--muted)}.mini-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.mini-nav a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:13px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:0 18px 30px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,1fr)}.columns,.columns.three,.prototype-links,.split{grid-template-columns:1fr}.checklist{grid-template-columns:1fr}.hero h1{font-size:29px}.page-hero h1{font-size:27px}.top-actions .hide-mobile{display:none}}
+@media(max-width:460px){.wrap{padding:0 11px;margin-top:14px}.topbar-inner{padding:11px 12px}.subtitle{display:none}.brand{font-size:16px}.quick-grid{grid-template-columns:1fr}.hero,.section,.page-hero{padding:19px}.section h2{font-size:21px}.hero h1{font-size:25px}}
+
+/* v1.0.1 hierarchy refinement */
+.section-head .eyebrow{font-size:22px;line-height:1.3;font-weight:800;color:var(--text);letter-spacing:0}
+.section-head h2{font-size:16px;line-height:1.5;font-weight:700;color:var(--muted);margin:5px 0 0}
+.checklist{grid-template-columns:1fr}
+.check{display:flex!important;width:100%;margin:0}
+@media(max-width:460px){.section-head .eyebrow{font-size:20px}.section-head h2{font-size:15px}}
+
+
+
+.search-panel{padding:24px;margin:18px 0}.search-panel .search-row{display:grid;grid-template-columns:1fr auto;gap:10px}.search-panel input{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:13px;background:#fff;font-size:15px}.search-panel button{border:0;border-radius:13px;padding:0 20px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-flex;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:13px;color:#4e584f}.chip:hover{border-color:#aebcaf}.myth-toolbar{padding:20px 22px;margin-bottom:18px;position:sticky;top:73px;z-index:15}.myth-toolbar .search-row{display:grid;grid-template-columns:1fr auto;gap:10px}.myth-toolbar input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px}.myth-toolbar button{padding:0 17px;border:1px solid var(--line);border-radius:12px;background:white;font-weight:800;cursor:pointer}.filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.filter-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;cursor:pointer;font-size:13px}.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}.result-count{font-size:13px;color:var(--muted);margin-top:9px}.myth-group{margin-top:18px}.myth-group-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 10px}.myth-group-title h2{font-size:23px;margin:0}.myth-group-title p{font-size:13px;color:var(--muted);margin:0}.myth-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.myth-card{border:1px solid var(--line);border-radius:17px;background:#fff;padding:18px}.myth-card.hidden{display:none}.myth-card h3{font-size:18px;line-height:1.45;margin:8px 0}.myth-card .answer{margin:0;color:#3f493f}.status{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}.status.adjust{background:#fff3dd;color:#765416}.status.no-need{background:#eef3f0;color:#4c6253}.status.avoid{background:#fff0ed;color:#8a463d}.status.individual{background:#eef2fa;color:#4d5e83}.myth-card details{margin-top:13px}.myth-card details p{margin:9px 0}.myth-card .why{color:#4f584f}.myth-card .do{background:var(--soft);border-radius:12px;padding:11px 12px}.related{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.related a{font-size:12px;padding:6px 9px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:#fff}.evidence-line{font-size:12px;color:var(--muted);margin-top:10px}.empty-state{display:none;padding:28px;text-align:center;color:var(--muted)}.empty-state.show{display:block}@media(max-width:850px){.myth-grid{grid-template-columns:1fr}.myth-toolbar{top:65px}}@media(max-width:520px){.search-panel .search-row,.myth-toolbar .search-row{grid-template-columns:1fr}.search-panel button,.myth-toolbar button{padding:11px 15px}.myth-toolbar{position:static}.myth-group-title{display:block}.myth-group-title p{margin-top:4px}}
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand-wrap" href="index.html"><div class="brand">产后家庭照护助手</div><div class="subtitle">v1.6 · 传统产后观念查询</div></a><div class="top-actions"><a class="pill hide-mobile" href="topic-diet.html">饮食</a><a class="pill danger" href="d1.html#urgent">🚨 出现异常</a></div></div></header>
+<main class="wrap">
+<section class="page-hero card"><div class="breadcrumb"><a href="index.html">首页</a> / 传统产后观念查询</div><div class="eyebrow">家庭查询库 · 共 38 条</div><h1>传统产后观念：保留合理部分，把做法改成更科学</h1><p>这里不评价某一代人，也不把所有传统做法简单判为“错”。每条都回答：为什么会形成、现代医学真正关注什么、家里现在怎样做更合适。遇到具体并发症或医生个体化医嘱时，以实际医疗建议为准。</p></section>
+<section class="myth-toolbar card"><div class="search-row"><input id="mythSearch" type="search" placeholder="搜：水果、红糖、鸡汤、洗澡、空调、腹带、堵奶、42天……"><button id="clearSearch" type="button">清空</button></div><div class="filter-row"><button class="filter-btn active" data-filter="all">全部</button><button class="filter-btn" data-filter="活动与清洁">活动与清洁</button><button class="filter-btn" data-filter="饮食与补养">饮食与补养</button><button class="filter-btn" data-filter="哺乳与乳房">哺乳与乳房</button><button class="filter-btn" data-filter="核心与盆底">核心与盆底</button><button class="filter-btn" data-filter="恶露与伤口">恶露与伤口</button><button class="filter-btn" data-filter="情绪与睡眠">情绪与睡眠</button></div><div id="resultCount" class="result-count">显示全部 38 条</div></section>
+<section class="myth-group" data-group="活动与清洁">
+      <div class="myth-group-title"><h2>活动与清洁</h2><p>把“休息、保暖”保留下来，但去掉长期卧床、禁水和绝对禁风。</p></div>
+      <div class="myth-grid"><article class="myth-card" id="myth-1" data-category="活动与清洁" data-search="产后应该尽量卧床，能不下地就不下地？ 卧床 静养 下床 走路 活动 休息 血栓 活动与清洁 产后确实需要休息和减少劳务，但没有并发症时并不主张长期完全卧床。安全、少量、逐步恢复走动更符合现代产后恢复。">
+      <span class="status adjust">保留核心，调整做法</span>
+      <h3>产后应该尽量卧床，能不下地就不下地？</h3>
+      <p class="answer">产后确实需要休息和减少劳务，但没有并发症时并不主张长期完全卧床。安全、少量、逐步恢复走动更符合现代产后恢复。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>传统强调“静养”，核心目的是避免产妇马上承担家务和重体力劳动，这一点值得保留。过去缺少镇痛、输血和现代监测，也更容易把“少劳累”与“少活动”混在一起。</p>
+        <p><b>现代医学怎么理解：</b>产后静脉血栓风险本来就升高，长期不动会进一步造成去适应、便秘和血流减慢。ACOG建议无并发症者在身体允许时逐步恢复活动。</p>
+        <p class="do"><b>家里实际怎么做：</b>家属把做饭、打扫、接待、采购等劳务接走；产妇在安全前提下短距离走动、上厕所和逐步增加日常活动。头晕、出血明显增加、疼痛加重时退回并咨询医护。</p>
+        <div class="related"><a href="d0.html">D0：生产当天</a><a href="topic-exercise.html">运动进阶</a></div>
+        <p class="evidence-line">主要依据：ACOG Exercise After Pregnancy</p>
+      </details>
+    </article><article class="myth-card" id="myth-2" data-category="活动与清洁" data-search="42天以前都不能运动，42天一到就可以恢复正常运动？ 42天 运动 跑步 跑跳 解禁 复查 活动与清洁 两句话都不准确。轻度活动往往可以很早开始；跑跳、重力量等高负荷运动则要看分娩方式、伤口、盆底和负荷耐受，不由“第42天”单独决定。">
+      <span class="status no-need">没有统一开关</span>
+      <h3>42天以前都不能运动，42天一到就可以恢复正常运动？</h3>
+      <p class="answer">两句话都不准确。轻度活动往往可以很早开始；跑跳、重力量等高负荷运动则要看分娩方式、伤口、盆底和负荷耐受，不由“第42天”单独决定。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>“42天”来自传统产褥期与常见复查时间，容易被理解成统一的禁闭期或毕业线。</p>
+        <p><b>现代医学怎么理解：</b>ACOG把产后运动定义为渐进恢复；2025年加拿大产后运动指南也强调根据症状、功能和医疗情况个体化进阶。</p>
+        <p class="do"><b>家里实际怎么做：</b>从走路、呼吸、低负荷核心和基础力量开始，观察当天和第二天是否出现出血反跳、疼痛、漏尿、阴道坠胀或明显疲劳，再决定是否升级。</p>
+        <div class="related"><a href="week5-6.html">第5—6周</a><a href="topic-exercise.html">运动进阶</a></div>
+        <p class="evidence-line">主要依据：ACOG Exercise After Pregnancy</p>
+      </details>
+    </article><article class="myth-card" id="myth-3" data-category="活动与清洁" data-search="坐月子不能洗澡、洗头，碰水会落下病根？ 洗澡 洗头 碰水 月子病 清洁 淋浴 活动与清洁 身体稳定、站立安全、伤口护理允许时，一般可以正常淋浴和洗头。真正要管理的是跌倒、切口/会阴护理、保暖和感染，而不是“水本身”。">
+      <span class="status no-need">通常没有必要</span>
+      <h3>坐月子不能洗澡、洗头，碰水会落下病根？</h3>
+      <p class="answer">身体稳定、站立安全、伤口护理允许时，一般可以正常淋浴和洗头。真正要管理的是跌倒、切口/会阴护理、保暖和感染，而不是“水本身”。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>过去取暖、热水、浴室防滑和卫生条件差，产后洗浴确实可能伴随受寒、跌倒或感染风险，因此形成了“禁水”的经验规则。</p>
+        <p><b>现代医学怎么理解：</b>现代产后护理明确重视会阴和伤口卫生。剖宫产则按医院对敷料和切口的具体要求执行。</p>
+        <p class="do"><b>家里实际怎么做：</b>第一次洗澡有人在附近更稳妥；避免过热、久站和泡澡到头晕。若切口敷料有特殊要求、发热、头晕或伤口异常，按医嘱调整。</p>
+        <div class="related"><a href="d1.html">D1：洗澡与清洁</a><a href="topic-perineum.html">会阴与裂伤</a><a href="topic-cesarean.html">剖宫产切口</a></div>
+        <p class="evidence-line">主要依据：NICE Postnatal Care NG194</p>
+      </details>
+    </article><article class="myth-card" id="myth-4" data-category="活动与清洁" data-search="产后不能开窗、吹风或开空调？ 空调 吹风 开窗 通风 受凉 月子病 保暖 活动与清洁 产后需要舒适保暖，但没有必要把门窗和空调一律禁掉。避免温度过低、风口直吹或过热出汗即可。">
+      <span class="status adjust">保留舒适原则，取消绝对禁忌</span>
+      <h3>产后不能开窗、吹风或开空调？</h3>
+      <p class="answer">产后需要舒适保暖，但没有必要把门窗和空调一律禁掉。避免温度过低、风口直吹或过热出汗即可。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>过去冬季取暖和居住条件有限，“避风寒”本质上是在避免低温和不适；后来被扩大成了“任何空气流动都会致病”。</p>
+        <p><b>现代医学怎么理解：</b>现代产后指南关注具体的体温、感染、脱水和舒适度，并不把正常通风或空调列为禁忌。过度捂热同样可能造成不适和脱水。</p>
+        <p class="do"><b>家里实际怎么做：</b>室温以本人舒适为准，保持空气流通，避免直吹和极端温度。发热时不要用“捂汗”代替测温和医疗评估。</p>
+        <div class="related"><a href="topic-sleep-mood.html">睡眠与情绪</a></div>
+        <p class="evidence-line">主要依据：WHO Postnatal Care；NICE Postnatal Care</p>
+      </details>
+    </article><article class="myth-card" id="myth-5" data-category="活动与清洁" data-search="产后要捂得越热越好，出汗是在“排寒排毒”？ 捂汗 发汗 排寒 排毒 出汗 热 水分 脱水 活动与清洁 产后出汗增多很常见，但不需要人为捂汗。大量出汗不代表“排毒更好”，反而可能增加口渴、头晕和脱水。">
+      <span class="status avoid">不建议刻意捂汗</span>
+      <h3>产后要捂得越热越好，出汗是在“排寒排毒”？</h3>
+      <p class="answer">产后出汗增多很常见，但不需要人为捂汗。大量出汗不代表“排毒更好”，反而可能增加口渴、头晕和脱水。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>传统“发汗”常与驱寒、恢复循环联系在一起。产后本身也会因为激素和体液变化出现夜间出汗，容易被解释成“寒气排出”。</p>
+        <p><b>现代医学怎么理解：</b>产后身体会自然排出孕期积累的部分水分。强行提高环境温度并不能加快子宫、伤口或盆底恢复。</p>
+        <p class="do"><b>家里实际怎么做：</b>穿着和室温以舒适为准，出汗后及时更换干爽衣物并补水。若伴发热、寒战或明显不适，要测体温并排查感染。</p>
+        <div class="related"><a href="d4-5.html">D4—5</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Warning Signs</p>
+      </details>
+    </article><article class="myth-card" id="myth-6" data-category="活动与清洁" data-search="月子里最好完全不出门？ 出门 外出 散步 晒太阳 月子 活动与清洁 没有医学上的“一律不能出门”。恢复稳定后，可以从短时间、低负荷、天气适宜的散步或复诊开始。">
+      <span class="status no-need">没有统一禁忌</span>
+      <h3>月子里最好完全不出门？</h3>
+      <p class="answer">没有医学上的“一律不能出门”。恢复稳定后，可以从短时间、低负荷、天气适宜的散步或复诊开始。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>传统上减少外出可以避免劳累、寒冷、感染暴露，也有保护产妇休息的作用。</p>
+        <p><b>现代医学怎么理解：</b>真正需要考虑的是体力、伤口、出血、天气、交通、感染暴露和宝宝照护，而不是“出了门就伤身体”。</p>
+        <p class="do"><b>家里实际怎么做：</b>先从短距离开始，避免拥挤和长时间站立；如果出血、伤口、血压或其他并发症尚未稳定，按医嘱活动。</p>
+        <div class="related"><a href="week3.html">第3周</a><a href="topic-exercise.html">运动进阶</a></div>
+        <p class="evidence-line">主要依据：ACOG Exercise After Pregnancy</p>
+      </details>
+    </article></div>
+    </section><section class="myth-group" data-group="饮食与补养">
+      <div class="myth-group-title"><h2>饮食与补养</h2><p>正常吃、吃得多样，比“补得猛、忌得多”更重要。</p></div>
+      <div class="myth-grid"><article class="myth-card" id="myth-7" data-category="饮食与补养" data-search="月子里不能吃水果、蔬菜，尤其不能吃“凉”的？ 水果 蔬菜 生冷 凉性 寒凉 便秘 纤维 饮食与补养 一般没有医学依据因为产后或哺乳而全面停止水果和蔬菜。它们提供纤维、维生素和矿物质，也有助于防便秘。">
+      <span class="status no-need">通常没有必要</span>
+      <h3>月子里不能吃水果、蔬菜，尤其不能吃“凉”的？</h3>
+      <p class="answer">一般没有医学依据因为产后或哺乳而全面停止水果和蔬菜。它们提供纤维、维生素和矿物质，也有助于防便秘。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>传统饮食把食物按“寒热”分类，并担心产后胃肠虚弱。食物温度与个人胃肠舒适确实可以调整，但不等于要从营养上去掉整个食物类别。</p>
+        <p><b>现代医学怎么理解：</b>CDC建议哺乳期保持健康、多样饮食，一般无需避免特定食物。RCOG也强调水果、蔬菜和全谷物有助于避免便秘。</p>
+        <p class="do"><b>家里实际怎么做：</b>可以把水果放到室温、熟食蔬菜或从少量开始；真正需要回避的是明确过敏、食源性风险或医生因具体疾病提出的限制。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a><a href="topic-bowel.html">便秘与痔疮</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding；RCOG OASI</p>
+      </details>
+    </article><article class="myth-card" id="myth-8" data-category="饮食与补养" data-search="产后只能喝汤，白水“没营养”或会影响恢复？ 汤 白水 喝水 补水 油汤 水分 饮食与补养 水、奶、汤和食物中的水分都可以帮助补水，但没有必要用浓汤替代白水。大量油汤反而可能挤占正常饭菜、增加脂肪和饱胀。">
+      <span class="status no-need">没有必要</span>
+      <h3>产后只能喝汤，白水“没营养”或会影响恢复？</h3>
+      <p class="answer">水、奶、汤和食物中的水分都可以帮助补水，但没有必要用浓汤替代白水。大量油汤反而可能挤占正常饭菜、增加脂肪和饱胀。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>汤在传统照护中同时承担了“补水、热食、补营养”的功能，因此容易被理解成越浓越补。</p>
+        <p><b>现代医学怎么理解：</b>泌乳和恢复需要充足水分，但并不存在“喝进去的汤直接变成奶”的简单关系。母乳建立更依赖有效和规律的乳汁移出。</p>
+        <p class="do"><b>家里实际怎么做：</b>口渴就喝水，三餐正常吃。汤可以作为一道菜，但不要强迫喝大量油汤，也不要为了“下奶”把整天饮食都变成汤。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding；ACOG Breastfeeding Challenges</p>
+      </details>
+    </article><article class="myth-card" id="myth-9" data-category="饮食与补养" data-search="鸡汤、猪蹄汤、鲫鱼汤能明显“下奶”？ 鸡汤 猪蹄汤 鲫鱼汤 催奶 下奶 泌乳 奶量 饮食与补养 这些食物可以作为正常饮食的一部分，但没有可靠证据证明某一种汤能稳定提高奶量。">
+      <span class="status no-need">没有可靠证据支持当作催乳治疗</span>
+      <h3>鸡汤、猪蹄汤、鲫鱼汤能明显“下奶”？</h3>
+      <p class="answer">这些食物可以作为正常饮食的一部分，但没有可靠证据证明某一种汤能稳定提高奶量。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>乳汁从乳房分泌，家人很自然会把“多吃、多喝”与“多产奶”联系起来，汤类也容易让人感觉在补身体。</p>
+        <p><b>现代医学怎么理解：</b>奶量的核心是产后激素、有效含接、喂养/排乳频率和母婴健康状况。真正低奶量应先评估喂养过程和宝宝体重/尿量。</p>
+        <p class="do"><b>家里实际怎么做：</b>家属准备均衡饭菜和水、保护睡眠；若担心奶量，优先找泌乳顾问或儿科/产科评估，而不是不断叠加催奶汤。</p>
+        <div class="related"><a href="topic-breast.html">乳房与乳腺炎</a><a href="d4-5.html">D4—5</a></div>
+        <p class="evidence-line">主要依据：ACOG Breastfeeding Challenges</p>
+      </details>
+    </article><article class="myth-card" id="myth-10" data-category="饮食与补养" data-search="产后要大量吃鸡蛋、肉，越多恢复越快？ 鸡蛋 肉 蛋白质 大补 高蛋白 月子餐 饮食与补养 蛋白质很重要，但恢复需要的是完整饮食结构，不是某一种食物越多越好。">
+      <span class="status adjust">需要适量，不需要堆量</span>
+      <h3>产后要大量吃鸡蛋、肉，越多恢复越快？</h3>
+      <p class="answer">蛋白质很重要，但恢复需要的是完整饮食结构，不是某一种食物越多越好。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>蛋和肉在过去是稀缺且高营养密度的食物，因此成为“产后补品”的代表。</p>
+        <p><b>现代医学怎么理解：</b>伤口修复需要蛋白质，同时也需要足够能量、维生素、矿物质、纤维和水。单一高蛋白饮食可能加重便秘、影响食欲。</p>
+        <p class="do"><b>家里实际怎么做：</b>每餐安排适量蛋白质，来源可以轮换鸡蛋、奶、鱼、瘦肉、禽肉、豆类/豆制品，同时保留主食、蔬菜和水果。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding</p>
+      </details>
+    </article><article class="myth-card" id="myth-11" data-category="饮食与补养" data-search="红糖、阿胶或“补血汤”可以替代铁剂治疗产后贫血？ 红糖 阿胶 补血 贫血 铁剂 血红蛋白 失血 饮食与补养 这些食物可以按口味吃，但不能代替血常规、铁状态评估和医生决定的口服/静脉铁治疗。">
+      <span class="status avoid">不能替代诊断和治疗</span>
+      <h3>红糖、阿胶或“补血汤”可以替代铁剂治疗产后贫血？</h3>
+      <p class="answer">这些食物可以按口味吃，但不能代替血常规、铁状态评估和医生决定的口服/静脉铁治疗。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>红色食物、甜食和滋补品长期被赋予“补血”意义，容易与医学上的血红蛋白和铁缺乏混为一谈。</p>
+        <p><b>现代医学怎么理解：</b>产后贫血常与分娩失血和孕期铁储备不足有关，治疗要看贫血程度、症状和病因。食物中的铁摄入是基础，但严重缺铁无法靠红糖解决。</p>
+        <p class="do"><b>家里实际怎么做：</b>如果分娩失血多、头晕心悸、脸色苍白或医生提示贫血，按医嘱复查并补铁；不要因为在“食补”而延后评估。</p>
+        <div class="related"><a href="d0.html">D0：失血</a><a href="topic-diet.html">产后饮食</a></div>
+        <p class="evidence-line">主要依据：WHO Postpartum Iron Supplementation</p>
+      </details>
+    </article><article class="myth-card" id="myth-12" data-category="饮食与补养" data-search="酒酿、米酒、药酒能“活血”“下奶”，哺乳期多喝一点没事？ 酒酿 米酒 药酒 黄酒 酒精 活血 下奶 哺乳 饮食与补养 酒精会进入乳汁，不是可靠的催乳方法。哺乳期不喝酒最安全。">
+      <span class="status avoid">不建议用酒精催乳</span>
+      <h3>酒酿、米酒、药酒能“活血”“下奶”，哺乳期多喝一点没事？</h3>
+      <p class="answer">酒精会进入乳汁，不是可靠的催乳方法。哺乳期不喝酒最安全。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>酒类在一些传统食谱里同时承担“暖身、活血、促循环”的角色，也常被用在月子餐。</p>
+        <p><b>现代医学怎么理解：</b>CDC指出酒精进入乳汁，泵掉乳汁不会加快酒精从身体清除；如果偶尔饮酒，需要给身体足够时间代谢。</p>
+        <p class="do"><b>家里实际怎么做：</b>不把含酒精饮品当产后保健品或催乳剂。若菜肴使用酒精烹调，残留量取决于做法；有疑问时选择无酒精替代更简单。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：CDC Alcohol and Breastfeeding</p>
+      </details>
+    </article><article class="myth-card" id="myth-13" data-category="饮食与补养" data-search="海鲜属于“发物”，产后和哺乳期应该完全不吃？ 海鲜 发物 鱼 虾 汞 DHA 哺乳 饮食与补养 没有必要因为“发物”概念全面禁海鲜。低汞鱼类本身是优质蛋白、碘和脂肪酸的重要来源。">
+      <span class="status no-need">通常没有必要</span>
+      <h3>海鲜属于“发物”，产后和哺乳期应该完全不吃？</h3>
+      <p class="answer">没有必要因为“发物”概念全面禁海鲜。低汞鱼类本身是优质蛋白、碘和脂肪酸的重要来源。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>传统“发物”常用于解释皮肤、伤口或炎症反复，但它不是现代医学统一定义的食物类别。</p>
+        <p><b>现代医学怎么理解：</b>CDC/FDA建议哺乳期选择低汞鱼类，并控制高汞鱼。真正需要避免的是个人明确过敏、食物不新鲜或特定医疗禁忌。</p>
+        <p class="do"><b>家里实际怎么做：</b>每周可安排低汞鱼类；不熟悉的海鲜先少量、充分加热。对本人或宝宝出现明确、可重复的过敏反应，再由医生评估是否需要回避。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding；FDA Advice About Eating Fish</p>
+      </details>
+    </article><article class="myth-card" id="myth-14" data-category="饮食与补养" data-search="哺乳期为了宝宝，辛辣、豆类、奶、牛肉等很多食物都要忌？ 忌口 辛辣 豆类 牛奶 牛肉 过奶 胀气 哺乳 饮食与补养 大多数哺乳者不需要因为“会过奶”“会胀气”而预防性禁掉大批食物。">
+      <span class="status no-need">一般不需要广泛忌口</span>
+      <h3>哺乳期为了宝宝，辛辣、豆类、奶、牛肉等很多食物都要忌？</h3>
+      <p class="answer">大多数哺乳者不需要因为“会过奶”“会胀气”而预防性禁掉大批食物。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>宝宝哭闹和肠胀气很常见，很容易与妈妈刚吃过的某种食物建立时间上的联系，于是逐渐形成越来越长的忌口清单。</p>
+        <p><b>现代医学怎么理解：</b>CDC建议哺乳期保持健康、多样饮食，一般无需避免特定食物。只有出现明确、重复的母婴反应时才值得针对性评估。</p>
+        <p class="do"><b>家里实际怎么做：</b>不要一次删掉多个食物类别。若怀疑某食物，记录时间和症状，与儿科/泌乳专业人员讨论，避免无依据长期限制导致营养不足。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding</p>
+      </details>
+    </article><article class="myth-card" id="myth-15" data-category="饮食与补养" data-search="哺乳期咖啡一点都不能喝？ 咖啡 咖啡因 茶 奶茶 可乐 能量饮料 哺乳 饮食与补养 多数哺乳者可以摄入少量到中等量咖啡因。新生儿早期可采用更保守的总量，并观察宝宝是否明显烦躁或睡眠受影响。">
+      <span class="status individual">不必绝对禁止</span>
+      <h3>哺乳期咖啡一点都不能喝？</h3>
+      <p class="answer">多数哺乳者可以摄入少量到中等量咖啡因。新生儿早期可采用更保守的总量，并观察宝宝是否明显烦躁或睡眠受影响。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>“任何刺激物都会过奶”的担心容易把咖啡因变成绝对禁忌。</p>
+        <p><b>现代医学怎么理解：</b>CDC认为约300 mg/天或以下通常不会对多数婴儿造成明显影响；ACOG患者教育常用约200 mg/天作为更保守参考。早产儿和小月龄婴儿代谢更慢。</p>
+        <p class="do"><b>家里实际怎么做：</b>把咖啡、茶、奶茶、可乐、巧克力的咖啡因加总；如果宝宝明显更烦躁或睡眠变差，尝试减量。避免高咖啡因能量饮料。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding</p>
+      </details>
+    </article><article class="myth-card" id="myth-16" data-category="饮食与补养" data-search="产后补剂越多越好：铁、钙、DHA、维生素、草药都一起吃？ 补剂 铁 钙 DHA 维生素 草药 保健品 叠加 饮食与补养 产后有些人确实需要继续某些补剂，但不是品种越多越好。重复剂量、药物相互作用和不必要的草药都值得避免。">
+      <span class="status individual">需要个体化核对</span>
+      <h3>产后补剂越多越好：铁、钙、DHA、维生素、草药都一起吃？</h3>
+      <p class="answer">产后有些人确实需要继续某些补剂，但不是品种越多越好。重复剂量、药物相互作用和不必要的草药都值得避免。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>产后“亏损大、要补回来”的观念容易让多个家庭成员分别加补剂，最终没人知道每天实际吃了多少。</p>
+        <p><b>现代医学怎么理解：</b>是否补铁取决于失血、血红蛋白和铁储备；哺乳期碘、胆碱等可先从饮食评估。复合维生素是否继续也应结合饮食和医嘱。</p>
+        <p class="do"><b>家里实际怎么做：</b>把所有处方药、非处方药、维生素、草药和保健品列在同一张清单，在产后复查或药师咨询时统一核对。</p>
+        <div class="related"><a href="topic-diet.html">产后饮食</a><a href="week5-6.html">第5—6周</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Diet and Breastfeeding</p>
+      </details>
+    </article></div>
+    </section><section class="myth-group" data-group="哺乳与乳房">
+      <div class="myth-group-title"><h2>哺乳与乳房</h2><p>从“通、揉、排空”转向供需、炎症和有效喂养。</p></div>
+      <div class="myth-grid"><article class="myth-card" id="myth-17" data-category="哺乳与乳房" data-search="乳房胀、摸到硬块，就要用力揉开、通开？ 堵奶 硬块 揉奶 按摩 通乳 暴力 乳腺炎 哺乳与乳房 不建议把乳房硬痛理解成必须“揉散的奶块”。深度、疼痛性按摩可能增加组织损伤和炎症。">
+      <span class="status avoid">不建议深度暴力按摩</span>
+      <h3>乳房胀、摸到硬块，就要用力揉开、通开？</h3>
+      <p class="answer">不建议把乳房硬痛理解成必须“揉散的奶块”。深度、疼痛性按摩可能增加组织损伤和炎症。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>硬块很直观地像“管子堵住了”，所以“把堵住的东西推开”很符合机械直觉，也形成了通乳按摩习惯。</p>
+        <p><b>现代医学怎么理解：</b>ABM 乳腺炎谱系指南强调很多所谓“堵奶”本质上与局部炎症和水肿有关。Mayo Clinic 2024版也建议冷敷并避免深度按摩。</p>
+        <p class="do"><b>家里实际怎么做：</b>正常喂养/排乳节奏、冷敷、减轻局部压力。持续红热痛、发热寒战或全身不适要联系医疗人员。</p>
+        <div class="related"><a href="topic-breast.html">乳房与乳腺炎</a><a href="d3.html">D3</a></div>
+        <p class="evidence-line">主要依据：ABM Protocol #36；Mayo Clinic Guide 2024</p>
+      </details>
+    </article><article class="myth-card" id="myth-18" data-category="哺乳与乳房" data-search="每次喂完都要把乳房“彻底排空”？ 排空 吸空 泵奶 奶量 过度排乳 供需 哺乳与乳房 乳房不是需要定期清空的容器。为了“排空”而额外大量泵奶可能推动过量泌乳，增加胀奶和炎症风险。">
+      <span class="status avoid">不需要刻意排空</span>
+      <h3>每次喂完都要把乳房“彻底排空”？</h3>
+      <p class="answer">乳房不是需要定期清空的容器。为了“排空”而额外大量泵奶可能推动过量泌乳，增加胀奶和炎症风险。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>“奶留在里面会坏掉/堵住”的说法把乳房想象成储奶瓶，因此形成固定排空目标。</p>
+        <p><b>现代医学怎么理解：</b>ACOG指出轻度生理性胀奶可观察处理，若表达乳汁，只需最小程度缓解不适；过度排空可能诱发过量泌乳。</p>
+        <p class="do"><b>家里实际怎么做：</b>让宝宝有效吃奶，泵奶按实际喂养计划和舒适需要安排，而不是追求每次“软到一点没有”。</p>
+        <div class="related"><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：ACOG Breastfeeding Challenges</p>
+      </details>
+    </article><article class="myth-card" id="myth-19" data-category="哺乳与乳房" data-search="奶越多越好，能吸出很多才说明恢复得好？ 奶量 奶多 吸奶器 过量泌乳 供需 奶阵 哺乳与乳房 目标是宝宝获得足够营养、妈妈乳房舒适，而不是追求最大产量。过量泌乳也会带来反复胀奶、喷乳和乳腺炎风险。">
+      <span class="status no-need">不是越多越好</span>
+      <h3>奶越多越好，能吸出很多才说明恢复得好？</h3>
+      <p class="answer">目标是宝宝获得足够营养、妈妈乳房舒适，而不是追求最大产量。过量泌乳也会带来反复胀奶、喷乳和乳腺炎风险。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>奶量很容易被量化，家属也容易把吸奶瓶上的毫升数当成“努力程度”和“母乳质量”的指标。</p>
+        <p><b>现代医学怎么理解：</b>单次泵出的量不能准确代表全天产奶，更不能代表宝宝从乳房获得的量。评估更看宝宝体重、尿便、吞咽和整体喂养。</p>
+        <p class="do"><b>家里实际怎么做：</b>不要比赛吸奶量。宝宝生长和尿便正常、妈妈舒适，就是更重要的结果。</p>
+        <div class="related"><a href="d4-5.html">D4—5</a><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：ACOG Breastfeeding Challenges</p>
+      </details>
+    </article><article class="myth-card" id="myth-20" data-category="哺乳与乳房" data-search="乳腺炎发烧就必须马上停母乳？ 乳腺炎 发烧 停奶 母乳 抗生素 哺乳 哺乳与乳房 大多数乳腺炎情况下可以继续哺乳或按正常节奏泵奶；是否用抗生素和是否有脓肿等特殊情况由医生判断。">
+      <span class="status individual">多数情况下不用停</span>
+      <h3>乳腺炎发烧就必须马上停母乳？</h3>
+      <p class="answer">大多数乳腺炎情况下可以继续哺乳或按正常节奏泵奶；是否用抗生素和是否有脓肿等特殊情况由医生判断。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>过去担心“炎症乳汁不干净”或抗生素进入乳汁，因此常直接建议停奶。</p>
+        <p><b>现代医学怎么理解：</b>当前乳腺炎处理强调维持生理性乳汁移出，突然停乳反而可能加重乳汁淤积。多数常用治疗与哺乳可以兼容。</p>
+        <p class="do"><b>家里实际怎么做：</b>发热寒战、局部红热痛明显或症状持续时尽快就医；不要一边停奶，一边用力按摩“排毒”。</p>
+        <div class="related"><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：ABM Protocol #36；Mayo Clinic Guide 2024</p>
+      </details>
+    </article><article class="myth-card" id="myth-21" data-category="哺乳与乳房" data-search="觉得奶少，第一件事就是喝催乳汤、催乳茶或吃草药？ 奶少 催乳汤 催乳茶 草药 催奶 低奶量 哺乳与乳房 怀疑奶少时，首先要确认“是否真的少”，以及含接、喂养频率、宝宝转奶效率、体重和尿便是否正常。催乳食品不能替代评估。">
+      <span class="status adjust">先评估原因</span>
+      <h3>觉得奶少，第一件事就是喝催乳汤、催乳茶或吃草药？</h3>
+      <p class="answer">怀疑奶少时，首先要确认“是否真的少”，以及含接、喂养频率、宝宝转奶效率、体重和尿便是否正常。催乳食品不能替代评估。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>“吃什么就补什么”的照护逻辑很容易应用到奶量问题上，而专业的含接和转奶评估不如一碗汤直观。</p>
+        <p><b>现代医学怎么理解：</b>ACOG建议根据喂养频率、体重增长、湿尿布等判断供奶是否足够。许多催乳草药的有效性和安全性证据有限。</p>
+        <p class="do"><b>家里实际怎么做：</b>先看宝宝体重和尿便，观察喂养，必要时找泌乳顾问/儿科/产科。不要同时尝试多种成分不明的催乳产品。</p>
+        <div class="related"><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：ACOG Breastfeeding Challenges</p>
+      </details>
+    </article><article class="myth-card" id="myth-22" data-category="哺乳与乳房" data-search="乳房软了就是没奶，乳房硬才说明奶足？ 乳房软 硬 奶足 奶少 胀奶 供需 哺乳与乳房 乳房从早期容易胀硬逐渐变得柔软，常常只是供需调节更稳定，并不等于奶量下降。">
+      <span class="status no-need">不是可靠判断方法</span>
+      <h3>乳房软了就是没奶，乳房硬才说明奶足？</h3>
+      <p class="answer">乳房从早期容易胀硬逐渐变得柔软，常常只是供需调节更稳定，并不等于奶量下降。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>最初几天“来奶”常伴明显胀满，于是很容易把硬度与奶量绑定。</p>
+        <p><b>现代医学怎么理解：</b>供奶是否足够应主要看宝宝有效吞咽、尿便、体重趋势和整体喂养，而不是靠摸乳房硬不硬。</p>
+        <p class="do"><b>家里实际怎么做：</b>不要为了让乳房重新“硬起来”而增加不必要泵奶。若宝宝体重或尿量异常，直接按喂养指标评估。</p>
+        <div class="related"><a href="topic-breast.html">乳房与乳腺炎</a></div>
+        <p class="evidence-line">主要依据：ACOG Breastfeeding Challenges</p>
+      </details>
+    </article></div>
+    </section><section class="myth-group" data-group="核心与盆底">
+      <div class="myth-group-title"><h2>核心与盆底</h2><p>不追商业化的“复位、闭合、几指达标”，以功能和症状为中心。</p></div>
+      <div class="myth-grid"><article class="myth-card" id="myth-23" data-category="核心与盆底" data-search="产后必须绑腹带，才能把肚子和骨盆“收回去”？ 腹带 束腹 收腹 收骨盆 骨盆 腹直肌 剖宫产 核心与盆底 腹带对部分剖宫产产妇可提供短期支撑和减轻活动不适，但不能把骨盆或腹直肌永久“绑回去”。">
+      <span class="status individual">可用于舒适，不是必需修复</span>
+      <h3>产后必须绑腹带，才能把肚子和骨盆“收回去”？</h3>
+      <p class="answer">腹带对部分剖宫产产妇可提供短期支撑和减轻活动不适，但不能把骨盆或腹直肌永久“绑回去”。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>分娩后腹部松软和骨盆周围不稳定感很直观，外部压迫会立即让外形和感觉改变，因此容易被解释为“复位”。</p>
+        <p><b>现代医学怎么理解：</b>ACOG把腹带列为剖宫产疼痛舒适措施之一，而不是所有产妇的结构修复治疗。长期恢复依靠组织愈合、活动和力量恢复。</p>
+        <p class="do"><b>家里实际怎么做：</b>如果使用，以舒适、不过紧、不影响呼吸/进食/盆底为前提；不需要为了“修复指标”长时间勒紧。</p>
+        <div class="related"><a href="topic-core.html">腹直肌与核心</a><a href="topic-cesarean.html">剖宫产切口</a></div>
+        <p class="evidence-line">主要依据：ACOG Postpartum Pain Management</p>
+      </details>
+    </article><article class="myth-card" id="myth-24" data-category="核心与盆底" data-search="产后骨盆“开了/歪了”，必须做手法闭合或复位？ 骨盆修复 骨盆闭合 复位 耻骨 手法 产后修复 核心与盆底 产后会有韧带、肌肉、盆底和姿势系统变化，但这不等同于骨盆普遍“错位”等着被按回去。">
+      <span class="status no-need">不是标准医学必需项目</span>
+      <h3>产后骨盆“开了/歪了”，必须做手法闭合或复位？</h3>
+      <p class="answer">产后会有韧带、肌肉、盆底和姿势系统变化，但这不等同于骨盆普遍“错位”等着被按回去。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>骨盆周径和体态确实会在孕产期变化，商业服务把这种复杂恢复简化成“开—合”模型，容易理解也容易营销。</p>
+        <p><b>现代医学怎么理解：</b>持续耻骨痛、骨盆带痛、走路困难或明显功能障碍可以评估和康复，但治疗目标是疼痛和功能，不是统一“闭合多少厘米”。</p>
+        <p class="do"><b>家里实际怎么做：</b>有症状找妇产科、康复科或盆底/女性健康物理治疗。不要把无症状人群的“复位”当成必须项目。</p>
+        <div class="related"><a href="topic-core.html">腹直肌与核心</a><a href="topic-pelvic-floor.html">盆底</a></div>
+        <p class="evidence-line">主要依据：ACOG Exercise After Pregnancy</p>
+      </details>
+    </article><article class="myth-card" id="myth-25" data-category="核心与盆底" data-search="腹直肌超过“两指”就是病，必须做专项修复？ 腹直肌 两指 分离 几指 修复 腹白线 核心与盆底 “几指”只能粗略描述间距，不能单独决定是否有病、是否需要治疗。更重要的是疼痛、疝气、力量和日常功能。">
+      <span class="status no-need">不要只看“几指”</span>
+      <h3>腹直肌超过“两指”就是病，必须做专项修复？</h3>
+      <p class="answer">“几指”只能粗略描述间距，不能单独决定是否有病、是否需要治疗。更重要的是疼痛、疝气、力量和日常功能。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>手指测量简单、可重复展示，因此被广泛用于产后机构筛查，也容易制造一个清晰的“达标线”。</p>
+        <p><b>现代医学怎么理解：</b>研究中的测量位置、方法和阈值并不统一。训练对间距可能有一定影响，但证据不足以支持一个统一的“闭合目标”。</p>
+        <p class="do"><b>家里实际怎么做：</b>把目标放在抱娃、起床、下蹲、训练时是否稳定和无痛。怀疑疝气、固定鼓包或功能长期受限时再专业评估。</p>
+        <div class="related"><a href="topic-core.html">腹直肌与核心</a></div>
+        <p class="evidence-line">主要依据：ACOG Physical Activity and Exercise</p>
+      </details>
+    </article><article class="myth-card" id="myth-26" data-category="核心与盆底" data-search="产后绝对不能卷腹、仰卧起坐，否则腹直肌会越练越开？ 卷腹 仰卧起坐 核心 腹直肌 鼓包 核心与盆底 没有证据支持所有产后女性长期禁止卷腹。是否合适取决于当前阶段、动作控制、疼痛和盆底反应。">
+      <span class="status no-need">不是绝对禁忌</span>
+      <h3>产后绝对不能卷腹、仰卧起坐，否则腹直肌会越练越开？</h3>
+      <p class="answer">没有证据支持所有产后女性长期禁止卷腹。是否合适取决于当前阶段、动作控制、疼痛和盆底反应。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>腹中线在负荷下鼓起很直观，容易被解释成“每做一次就把腹直肌撑开”。</p>
+        <p><b>现代医学怎么理解：</b>ACOG明确把腹部强化纳入产后运动，并提到卷腹类训练。真正需要的是渐进负荷和症状反馈。</p>
+        <p class="do"><b>家里实际怎么做：</b>先从低负荷核心开始，再逐步加入卷腹、推拉、下蹲等。若明显疼痛、失控鼓包、漏尿或坠胀，先降级并调整。</p>
+        <div class="related"><a href="topic-core.html">腹直肌与核心</a><a href="topic-exercise.html">运动进阶</a></div>
+        <p class="evidence-line">主要依据：ACOG Physical Activity and Exercise</p>
+      </details>
+    </article><article class="myth-card" id="myth-27" data-category="核心与盆底" data-search="剖宫产没有经过阴道分娩，所以不需要关注盆底？ 剖宫产 盆底 漏尿 阴道分娩 孕期 核心与盆底 盆底不仅受阴道分娩影响，整个妊娠期的重量、激素和腹压变化也会影响它；剖宫产后同样可能出现漏尿、坠胀或疼痛。">
+      <span class="status adjust">仍然需要关注</span>
+      <h3>剖宫产没有经过阴道分娩，所以不需要关注盆底？</h3>
+      <p class="answer">盆底不仅受阴道分娩影响，整个妊娠期的重量、激素和腹压变化也会影响它；剖宫产后同样可能出现漏尿、坠胀或疼痛。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>把盆底损伤完全等同于“宝宝从阴道出来”很直观，因此容易忽视妊娠本身和手术后的整体功能变化。</p>
+        <p><b>现代医学怎么理解：</b>ACOG支持产后早期开始盆底训练；出现症状时应按功能评估，而不是以分娩方式决定“需不需要管”。</p>
+        <p class="do"><b>家里实际怎么做：</b>剖宫产者同样观察漏尿、尿急、排尿困难、阴道/盆腔坠胀和性生活疼痛；有症状就评估。</p>
+        <div class="related"><a href="topic-pelvic-floor.html">盆底与漏尿</a><a href="topic-cesarean.html">剖宫产切口</a></div>
+        <p class="evidence-line">主要依据：ACOG Physical Activity and Exercise</p>
+      </details>
+    </article><article class="myth-card" id="myth-28" data-category="核心与盆底" data-search="漏尿是生完孩子都这样，忍一忍以后自然好？ 漏尿 尿失禁 尿急 盆底 正常 忍 核心与盆底 产后早期漏尿很常见，很多人会改善；但“常见”不等于应该长期忍受。持续或明显漏尿值得盆底评估。">
+      <span class="status adjust">常见，但不应长期忽略</span>
+      <h3>漏尿是生完孩子都这样，忍一忍以后自然好？</h3>
+      <p class="answer">产后早期漏尿很常见，很多人会改善；但“常见”不等于应该长期忍受。持续或明显漏尿值得盆底评估。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>周围很多生过孩子的人都有类似经历，容易把症状正常化。</p>
+        <p><b>现代医学怎么理解：</b>盆底康复可以改善一部分尿失禁。若伴排尿困难、坠胀、疼痛或尿便控制问题，更需要评估。</p>
+        <p class="do"><b>家里实际怎么做：</b>先做正确的基础盆底训练和渐进活动；数周至数月仍明显影响生活，或症状重，咨询妇产科/泌尿妇科/盆底物理治疗。</p>
+        <div class="related"><a href="topic-pelvic-floor.html">盆底与漏尿</a></div>
+        <p class="evidence-line">主要依据：RCOG Pelvic Floor；ACOG Postpartum Care</p>
+      </details>
+    </article><article class="myth-card" id="myth-29" data-category="核心与盆底" data-search="凯格尔做得越多、夹得越紧，盆底恢复越快？ 凯格尔 盆底肌 夹紧 过度训练 放松 疼痛 核心与盆底 盆底需要“会收，也会放”。如果本来就紧张、疼痛或协调差，只叠加更多收缩未必合适。">
+      <span class="status avoid">不是越多越好</span>
+      <h3>凯格尔做得越多、夹得越紧，盆底恢复越快？</h3>
+      <p class="answer">盆底需要“会收，也会放”。如果本来就紧张、疼痛或协调差，只叠加更多收缩未必合适。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>力量训练常被理解成“次数越多越强”，而凯格尔动作又很隐蔽，容易自行不断加量。</p>
+        <p><b>现代医学怎么理解：</b>盆底功能包括力量、耐力、放松和协调。持续性交痛、排便困难、盆底疼痛或越练越不舒服时，需要评估是否存在过度紧张。</p>
+        <p class="do"><b>家里实际怎么做：</b>练习质量优先于数量；每次收缩后充分放松。症状复杂时让盆底物理治疗师确认动作和训练方向。</p>
+        <div class="related"><a href="topic-pelvic-floor.html">盆底与漏尿</a></div>
+        <p class="evidence-line">主要依据：RCOG Pelvic Floor</p>
+      </details>
+    </article><article class="myth-card" id="myth-30" data-category="核心与盆底" data-search="过了42天，性生活、跑跳、羽毛球都可以一次性恢复？ 42天 性生活 跑步 羽毛球 舞蹈 跳跃 解禁 核心与盆底 42天是复查节点，不是全身组织同时完成恢复的日期。性生活、跑跳和专项运动各自需要不同条件。">
+      <span class="status individual">需要按功能分开判断</span>
+      <h3>过了42天，性生活、跑跳、羽毛球都可以一次性恢复？</h3>
+      <p class="answer">42天是复查节点，不是全身组织同时完成恢复的日期。性生活、跑跳和专项运动各自需要不同条件。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>统一日期最容易执行，也符合“坐满月子就毕业”的传统时间观。</p>
+        <p><b>现代医学怎么理解：</b>伤口、盆底、核心、心肺、睡眠和性欲恢复速度不同。ACOG强调运动渐进；性生活也没有统一必须开始的日期。</p>
+        <p class="do"><b>家里实际怎么做：</b>分别检查：伤口是否愈合、出血是否停止、是否漏尿/坠胀/疼痛、动作负荷是否耐受、本人是否愿意。</p>
+        <div class="related"><a href="week5-6.html">第5—6周</a><a href="topic-exercise.html">运动进阶</a><a href="topic-sex.html">性生活</a></div>
+        <p class="evidence-line">主要依据：ACOG Exercise After Pregnancy；RCOG OASI</p>
+      </details>
+    </article></div>
+    </section><section class="myth-group" data-group="恶露与伤口">
+      <div class="myth-group-title"><h2>恶露与伤口</h2><p>不把异常出血、疼痛和感染解释成“排毒”或“长肉”。</p></div>
+      <div class="myth-grid"><article class="myth-card" id="myth-31" data-category="恶露与伤口" data-search="恶露排得越多越好，说明“排得干净”？ 恶露 排干净 排毒 出血 血块 活血 恶露与伤口 恶露是子宫修复过程，不是越多越好。判断重点是总体逐渐减少，而不是想办法“催出更多”。">
+      <span class="status avoid">不建议追求更多出血</span>
+      <h3>恶露排得越多越好，说明“排得干净”？</h3>
+      <p class="answer">恶露是子宫修复过程，不是越多越好。判断重点是总体逐渐减少，而不是想办法“催出更多”。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>把恶露理解成体内需要排出的“脏东西”，就很容易认为量越多、越快结束越好。</p>
+        <p><b>现代医学怎么理解：</b>异常大量出血可能是产后出血而不是“排得好”。CDC将短时间浸透卫生巾、大血块或组织样物质列为紧急警示。</p>
+        <p class="do"><b>家里实际怎么做：</b>观察量、趋势、气味和伴随症状。突然明显增多、头晕心悸、恶臭伴发热腹痛等应及时评估。</p>
+        <div class="related"><a href="topic-lochia.html">恶露与出血</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Warning Signs</p>
+      </details>
+    </article><article class="myth-card" id="myth-32" data-category="恶露与伤口" data-search="喝红糖水、酒或多走路可以“活血催恶露”？ 红糖 活血 催恶露 酒 走路 出血 恶露与伤口 没有必要人为增加出血来“排恶露”。活动应该为恢复功能服务，不以“出更多血”为目标。">
+      <span class="status avoid">没有必要，异常增血需警惕</span>
+      <h3>喝红糖水、酒或多走路可以“活血催恶露”？</h3>
+      <p class="answer">没有必要人为增加出血来“排恶露”。活动应该为恢复功能服务，不以“出更多血”为目标。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>传统“活血化瘀”思路容易把出血量与恢复效果绑定。</p>
+        <p><b>现代医学怎么理解：</b>子宫会自行复旧。若某种做法后出血明显增加，应先减量和评估，而不是把它当成有效证据。</p>
+        <p class="do"><b>家里实际怎么做：</b>正常进食、补水和适度活动即可。任何药酒、中药或所谓活血产品，在出血多、贫血或用药情况下先问医生。</p>
+        <div class="related"><a href="topic-lochia.html">恶露与出血</a><a href="topic-diet.html">产后饮食</a></div>
+        <p class="evidence-line">主要依据：CDC Maternal Warning Signs</p>
+      </details>
+    </article><article class="myth-card" id="myth-33" data-category="恶露与伤口" data-search="会阴或剖宫产伤口越痛，说明“长肉、在恢复”，忍过去就行？ 伤口 疼痛 会阴 切口 长肉 忍 感染 血肿 恶露与伤口 早期疼痛常见，但疼痛应该总体可控并逐渐改善。突然加重、越来越痛或伴红肿渗液，不应解释成“长肉”。">
+      <span class="status avoid">疼痛趋势很重要</span>
+      <h3>会阴或剖宫产伤口越痛，说明“长肉、在恢复”，忍过去就行？</h3>
+      <p class="answer">早期疼痛常见，但疼痛应该总体可控并逐渐改善。突然加重、越来越痛或伴红肿渗液，不应解释成“长肉”。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>伤口愈合时确实会有牵拉、痒或不适，因此很容易把所有疼痛都归入“正常恢复”。</p>
+        <p><b>现代医学怎么理解：</b>NICE特别提醒会阴疼痛常被低估；持续或加重疼痛可能提示感染、血肿或伤口问题。</p>
+        <p class="do"><b>家里实际怎么做：</b>使用医嘱允许的镇痛，观察趋势。疼痛突然升级、伤口裂开、流脓、恶臭、发热等及时就医。</p>
+        <div class="related"><a href="topic-perineum.html">会阴与裂伤</a><a href="topic-cesarean.html">剖宫产切口</a></div>
+        <p class="evidence-line">主要依据：NICE Postnatal Care；ACOG Postpartum Pain Management</p>
+      </details>
+    </article><article class="myth-card" id="myth-34" data-category="恶露与伤口" data-search="会阴每天必须用强消毒液反复冲洗，越“杀菌”越好？ 会阴 消毒 碘伏 高锰酸钾 清洗 杀菌 伤口 恶露与伤口 常规护理重点是保持清洁、干燥和勤换卫生用品，并不是反复用刺激性消毒液。特殊伤口按医院医嘱。">
+      <span class="status no-need">通常不需要过度消毒</span>
+      <h3>会阴每天必须用强消毒液反复冲洗，越“杀菌”越好？</h3>
+      <p class="answer">常规护理重点是保持清洁、干燥和勤换卫生用品，并不是反复用刺激性消毒液。特殊伤口按医院医嘱。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>产后有伤口和恶露，看起来很容易感染，因此“杀菌越多越安全”很符合直觉。</p>
+        <p><b>现代医学怎么理解：</b>NICE强调实用的会阴卫生和对异常疼痛/感染的识别。过度刺激并不能替代真正的感染评估。</p>
+        <p class="do"><b>家里实际怎么做：</b>温和清洁、擦干、勤换卫生用品；若医生针对裂伤、切口或感染给出特定清洁方案，则按医嘱执行。</p>
+        <div class="related"><a href="topic-perineum.html">会阴与裂伤</a></div>
+        <p class="evidence-line">主要依据：NICE Postnatal Care NG194</p>
+      </details>
+    </article></div>
+    </section><section class="myth-group" data-group="情绪与睡眠">
+      <div class="myth-group-title"><h2>情绪与睡眠</h2><p>情绪变化是真实的健康问题，支持和睡眠不是可有可无。</p></div>
+      <div class="myth-grid"><article class="myth-card" id="myth-35" data-category="情绪与睡眠" data-search="产后情绪差、爱哭、焦虑就是“想太多”“矫情”？ 情绪 抑郁 焦虑 爱哭 矫情 想太多 baby blues 情绪与睡眠 产后激素变化、疼痛、睡眠剥夺和身份转变都可能影响情绪。短暂 baby blues 很常见，但持续、加重或影响功能的症状需要评估。">
+      <span class="status avoid">需要认真看待</span>
+      <h3>产后情绪差、爱哭、焦虑就是“想太多”“矫情”？</h3>
+      <p class="answer">产后激素变化、疼痛、睡眠剥夺和身份转变都可能影响情绪。短暂 baby blues 很常见，但持续、加重或影响功能的症状需要评估。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>家庭更容易看见“情绪表现”而不是背后的生理和心理因素，所以常用性格或态度解释。</p>
+        <p><b>现代医学怎么理解：</b>baby blues 多在最初两周内缓解；产后抑郁和焦虑可以在产后一年内出现，并不是意志力问题。</p>
+        <p class="do"><b>家里实际怎么做：</b>家属先听、分担照护、保护睡眠。如果低落/焦虑持续超过两周、明显影响功能，或任何时候出现自伤/伤婴想法，及时求助。</p>
+        <div class="related"><a href="topic-sleep-mood.html">睡眠与产后情绪</a></div>
+        <p class="evidence-line">主要依据：ACOG Postpartum Depression；Mayo Clinic Guide 2024</p>
+      </details>
+    </article><article class="myth-card" id="myth-36" data-category="情绪与睡眠" data-search="“生完都这样”，baby blues 超过两周也可以继续等？ baby blues 两周 抑郁 焦虑 继续等 情绪与睡眠 baby blues 通常在几天到两周内缓解。超过两周仍明显低落、焦虑、易怒或无法正常生活，不应继续用 baby blues 解释。">
+      <span class="status avoid">超过典型时间要重新评估</span>
+      <h3>“生完都这样”，baby blues 超过两周也可以继续等？</h3>
+      <p class="answer">baby blues 通常在几天到两周内缓解。超过两周仍明显低落、焦虑、易怒或无法正常生活，不应继续用 baby blues 解释。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>因为早期情绪波动非常普遍，家属容易把所有后续症状都纳入同一个“正常阶段”。</p>
+        <p><b>现代医学怎么理解：</b>持续症状可能是产后抑郁、焦虑、创伤反应、甲状腺问题或其他需要评估的情况。</p>
+        <p class="do"><b>家里实际怎么做：</b>记录持续时间和对睡眠、进食、照顾自己/宝宝的影响，尽快联系产科、全科或心理/精神健康专业人员。</p>
+        <div class="related"><a href="topic-sleep-mood.html">睡眠与产后情绪</a></div>
+        <p class="evidence-line">主要依据：ACOG Perinatal Mental Health；Mayo Clinic Guide 2024</p>
+      </details>
+    </article><article class="myth-card" id="myth-37" data-category="情绪与睡眠" data-search="产妇夜里应该自己全程带娃，才能建立感情、保证母乳？ 夜间 带娃 睡眠 喂奶 家属 分工 母乳 情绪与睡眠 母乳喂养可能需要母亲参与夜间喂养，但不代表换尿布、拍嗝、哄睡、清洗、记录等全部都必须由她承担。">
+      <span class="status adjust">不需要把睡眠全部牺牲掉</span>
+      <h3>产妇夜里应该自己全程带娃，才能建立感情、保证母乳？</h3>
+      <p class="answer">母乳喂养可能需要母亲参与夜间喂养，但不代表换尿布、拍嗝、哄睡、清洗、记录等全部都必须由她承担。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>“妈妈最懂宝宝”和“母乳只能妈妈完成”容易被延伸为夜间照护全包。</p>
+        <p><b>现代医学怎么理解：</b>严重睡眠剥夺会放大疼痛、情绪和认知负担。家庭分工是产后恢复的一部分。</p>
+        <p class="do"><b>家里实际怎么做：</b>把只有产妇能做的环节与别人能接手的环节拆开，尽量为她创造连续睡眠机会；喂养困难时用专业支持解决，不用熬夜证明投入。</p>
+        <div class="related"><a href="topic-sleep-mood.html">睡眠与产后情绪</a><a href="d4-5.html">D4—5</a></div>
+        <p class="evidence-line">主要依据：ACOG Postpartum Care</p>
+      </details>
+    </article><article class="myth-card" id="myth-38" data-category="情绪与睡眠" data-search="出现幻觉、妄想、极度兴奋或几乎不睡，可以先在家观察几天？ 幻觉 妄想 精神病 极度兴奋 不睡 自杀 伤婴 急诊 情绪与睡眠 不建议等待。明显幻觉、妄想、严重精神行为异常、自伤或伤害宝宝想法需要立即获得急诊/精神科评估。">
+      <span class="status avoid">属于紧急情况</span>
+      <h3>出现幻觉、妄想、极度兴奋或几乎不睡，可以先在家观察几天？</h3>
+      <p class="answer">不建议等待。明显幻觉、妄想、严重精神行为异常、自伤或伤害宝宝想法需要立即获得急诊/精神科评估。</p>
+      <details><summary>展开科学解释</summary>
+        <p class="why"><b>为什么会有这种说法：</b>很多家庭把产后所有异常都归因于“太累”“激素波动”，因此可能低估少见但危险的产后精神病。</p>
+        <p><b>现代医学怎么理解：</b>产后精神病进展可以很快，属于母婴安全急症。</p>
+        <p class="do"><b>家里实际怎么做：</b>不要让本人独处或单独照顾宝宝；立即联系当地急救/急诊，并清楚告诉医护“近期分娩”。</p>
+        <div class="related"><a href="topic-sleep-mood.html">睡眠与产后情绪</a></div>
+        <p class="evidence-line">主要依据：ACOG Perinatal Mental Health；CDC Maternal Warning Signs</p>
+      </details>
+    </article></div>
+    </section>
+<div id="emptyState" class="empty-state card">没有找到完全匹配的说法。可以换一个更口语的词，例如“下奶”“堵奶”“受凉”“收骨盆”；也可以回到主题知识库查询。</div>
+<section class="section card"><div class="section-head"><div><div class="eyebrow">怎么使用这套查询库</div><h2>先解决家庭争议，再根据症状进入具体主题页</h2></div></div><div class="columns three"><div class="panel"><h3>“保留核心，调整做法”</h3><p>说明传统观念里有合理目标，例如休息、保暖、补营养，但执行方式需要更新。</p></div><div class="panel"><h3>“通常没有必要”</h3><p>表示没有必要把它当作所有产妇的统一规则；有个体疾病时仍可能有例外。</p></div><div class="panel"><h3>“不建议”</h3><p>表示这种做法可能延误识别异常、增加不适或与当前医学建议相冲突。</p></div></div></section>
+<section class="section card"><div class="source-box"><h3>本查询库主要依据</h3><ul>
+<li><a href="https://www.acog.org/womens-health/faqs/exercise-after-pregnancy">ACOG：Exercise After Pregnancy</a></li>
+<li><a href="https://www.acog.org/womens-health/faqs/postpartum-pain-management">ACOG：Postpartum Pain Management</a></li>
+<li><a href="https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges">ACOG：Breastfeeding Challenges</a></li>
+<li><a href="https://www.nice.org.uk/guidance/ng194/chapter/Recommendations">NICE NG194：Postnatal Care</a></li>
+<li><a href="https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/maternal-diet.html">CDC：Maternal Diet and Breastfeeding</a></li>
+<li><a href="https://www.cdc.gov/hearher/maternal-warning-signs/index.html">CDC：Urgent Maternal Warning Signs</a></li>
+<li><a href="https://www.bfmed.org/protocols">Academy of Breastfeeding Medicine：Clinical Protocols（含#36乳腺炎谱系）</a></li>
+<li><a href="https://www.rcog.org.uk/for-the-public/perineal-tears-and-episiotomies-in-childbirth/third-and-fourth-degree-tears-oasi/">RCOG：Third- and Fourth-degree Tears</a></li>
+<li><a href="https://www.who.int/publications/i/item/9789240045989">WHO：Recommendations on Maternal and Newborn Care for a Positive Postnatal Experience</a></li>
+<li>用户提供的 ACOG《Your Pregnancy and Childbirth》、Mayo Clinic《Guide to a Healthy Pregnancy》、AAP《Caring for Your Baby and Young Child》用于补充患者教育与家庭解释。</li>
+</ul><details><summary>证据边界</summary><p>传统做法往往不是以现代临床试验形式被研究，因此有些条目并不存在“专门证明某个民俗无效”的研究。这里优先依据当前产后指南对活动、营养、伤口、哺乳和危险信号的正面建议，再判断某种家庭规则是否必要、是否冲突。若证据不足，使用“没有统一禁忌”“需要个体化”等措辞，不做过度确定的结论。</p></details></div></section>
+</main><footer>v1.6 · 传统产后观念查询库 · 用于家庭健康教育，不能替代针对个人分娩情况的医疗诊断与医嘱</footer>
+<script>
+const input=document.getElementById('mythSearch'), cards=[...document.querySelectorAll('.myth-card')], groups=[...document.querySelectorAll('.myth-group')], count=document.getElementById('resultCount'), empty=document.getElementById('emptyState'), buttons=[...document.querySelectorAll('.filter-btn')]; let active='all';
+function norm(s){return (s||'').toLowerCase().replace(/\s+/g,'')}
+function apply(){const q=norm(input.value); let n=0; cards.forEach(c=>{const okCat=active==='all'||c.dataset.category===active; const okQ=!q||norm(c.dataset.search).includes(q); const show=okCat&&okQ;c.classList.toggle('hidden',!show);if(show)n++;});groups.forEach(g=>{const visible=[...g.querySelectorAll('.myth-card')].some(c=>!c.classList.contains('hidden'));g.style.display=visible?'':'none';});count.textContent=q||active!=='all'?`找到 ${n} 条相关内容`:`显示全部 ${n} 条`;empty.classList.toggle('show',n===0);}
+input.addEventListener('input',apply);document.getElementById('clearSearch').addEventListener('click',()=>{input.value='';active='all';buttons.forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));history.replaceState(null,'',location.pathname);apply();input.focus();});buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.classList.toggle('active',x===b));apply();}));
+const qs=new URLSearchParams(location.search);if(qs.get('q')){input.value=qs.get('q');}apply();
+</script></body></html>
