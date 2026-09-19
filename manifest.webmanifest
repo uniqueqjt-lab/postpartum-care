@@ -1,0 +1,11 @@
+{
+  "name": "产后家庭照护助手",
+  "short_name": "产后照护",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f3",
+  "theme_color": "#f6f7f3",
+  "lang": "zh-CN",
+  "description": "产后恢复、家庭照护、传统产后观念查询与异常情况提醒。"
+}
